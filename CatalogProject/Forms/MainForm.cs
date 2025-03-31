@@ -34,8 +34,10 @@ namespace CatalogProject
       
         private void DataSettingBtn_Click(object sender, EventArgs e)
         {
-            CompanyList frmProductsList = new CompanyList();
+            CompanyListFrm frmProductsList = new CompanyListFrm();
+            this.Hide();
             frmProductsList.ShowDialog();
+            this.Show();
         }
     }
 }

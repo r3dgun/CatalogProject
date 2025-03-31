@@ -16,12 +16,12 @@ using CatalogProject.Servise.helper;
 
 namespace CatalogProject.Forms.CategoryForm
 {
-    public partial class AddCompany : Form
+    public partial class AddCompanyFrm : Form
     {
         private CompanyService _companyService;
         private Company _company = null;
         private bool _imageChanged = false;
-        public AddCompany(int companyId = 0)
+        public AddCompanyFrm(int companyId = 0)
         {
             _companyService = new CompanyService();
             InitializeComponent();

@@ -19,7 +19,6 @@ public interface ICompanyService
     bool UpdateCompany(Models.Company company);
     bool DeleteCompany(Models.Company company);
     bool DeleteCompany(int companyId);
-    bool UpdateCompanyCategory(int companyId, int categoryId);
 
 }
 public class CompanyService: ICompanyService
@@ -86,16 +85,7 @@ public class CompanyService: ICompanyService
         return _collection.Delete(companyId);
     }
 
-    public bool UpdateCompanyCategory(int companyId, int categoryId)
-    {
-        var company = GetCompaniesById(companyId);
-        if (company.CategoryIds.Any(p => p == categoryId))
-        {
-            return false;
-        }
-        company.CategoryIds.Add(categoryId);
-        return UpdateCompany(company);
-    }
+   
 
  
 }

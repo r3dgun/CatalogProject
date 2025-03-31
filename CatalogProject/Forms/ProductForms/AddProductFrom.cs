@@ -79,7 +79,6 @@ namespace CatalogProject.ProductFroms
                 Image = imageName,
             };
             var productId = _productService.InsertProduct(product);
-            _categoryService.UpdateCategoryProducts(productId, _categoryId);
             List<Option> options = new List<Option>();
             for (int i = 1; i < 6; i++)
             {

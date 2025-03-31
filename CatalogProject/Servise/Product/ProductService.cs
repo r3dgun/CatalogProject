@@ -20,7 +20,6 @@ namespace CatalogProject.Servise.Product
         bool UpdateProduct(Models.Product product);
         bool DeleteProduct(Models.Product product);
         bool DeleteProduct(int productId);
-        bool UpdateProductOptions(int productId, List<int> optionIds);
         List<Models.Product> GetProductWithCategoryId(int categoryId);
         bool DeleteProductWithCategoryId(int categoryId);
         string GetProductNameWithCategoryId(int categoryId);
@@ -104,23 +103,6 @@ namespace CatalogProject.Servise.Product
             {
                 return false;
             }
-        }
-
-        public bool UpdateProductOptions(int productId, List<int> optionIds)
-        {
-            var product = GetProductById(productId);
-            foreach (var optionId in optionIds)
-            {
-                if (product.OptionIds.Any(p => p == optionId))
-                {
-                    optionIds.Remove(optionId);
-                }
-                else
-                {
-                    product.OptionIds.Add(optionId);
-                }
-            }
-            return UpdateProduct(product);
         }
 
         public List<Models.Product> GetProductWithCategoryId(int categoryId)

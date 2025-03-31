@@ -15,14 +15,14 @@ using Models;
 
 namespace CatalogProject.Forms.CategoryForm
 {
-    public partial class AddCategory : Form
+    public partial class AddCategoryFrm : Form
     {
         private CategoryService _categoryService;
         private CompanyService _companyService;
         private bool _imageChange = false;
         private Category _category = null;
         private int _CompanyId;
-        public AddCategory(int companyId, int categoryId = 0)
+        public AddCategoryFrm(int companyId, int categoryId = 0)
         {
             InitializeComponent();
             _CompanyId = companyId;
@@ -63,7 +63,6 @@ namespace CatalogProject.Forms.CategoryForm
                     Image = imageName
                 };
                 var categoryId = _categoryService.InsertCategory(category);
-                _companyService.UpdateCompanyCategory(_CompanyId, categoryId);
             }
             else
             {
@@ -79,7 +78,6 @@ namespace CatalogProject.Forms.CategoryForm
 
 
                 var categoryId = _categoryService.InsertCategory(_category);
-                _companyService.UpdateCompanyCategory(_CompanyId, categoryId);
             }
             this.Close();
 

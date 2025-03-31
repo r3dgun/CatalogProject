@@ -18,7 +18,6 @@ namespace Models
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public HashSet<int> CategoryIds { get; set; } = new();
     }
     public class DgvCompany
     {
@@ -42,7 +41,6 @@ namespace Models
         public string Description { get; set; }
         public string Image { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public HashSet<int> ProductIds { get; set; } = new();
     }
     public class DgvCategory
     {
@@ -66,7 +64,6 @@ namespace Models
         public string Image { get; set; }
         public string SecondImage { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public HashSet<int> OptionIds { get; set; } = new();
     }
 
     public class DgvProduct

@@ -15,12 +15,12 @@ using Models;
 
 namespace CatalogProject.Forms.CategoryForm
 {
-    public partial class CompanyList : Form
+    public partial class CompanyListFrm : Form
     {
         private CompanyService _companyService;
         private CategoryService _categoryService;
 
-        public CompanyList()
+        public CompanyListFrm()
         {
             InitializeComponent();
             _companyService = new CompanyService();
@@ -56,8 +56,11 @@ namespace CatalogProject.Forms.CategoryForm
 
         private void btnAddCompany_ButtonClick(object sender, EventArgs e)
         {
-            AddCompany frmAddCompany = new AddCompany();
+            this.Hide();
+            AddCompanyFrm frmAddCompany = new AddCompanyFrm();
             frmAddCompany.ShowDialog();
+            this.Show();
+
             LoadCompanies();
         }
 
@@ -70,8 +73,10 @@ namespace CatalogProject.Forms.CategoryForm
             }
 
             int selectedId = (int)dgvComanies.SelectedRows[0].Cells["Id"].Value;
-            CategoryList frmCategoryList = new CategoryList(selectedId);
+            CategoryListFrm frmCategoryList = new CategoryListFrm(selectedId);
+            this.Hide();
             frmCategoryList.ShowDialog();
+            this.Show();
             LoadCompanies();
         }
 
@@ -96,7 +101,7 @@ namespace CatalogProject.Forms.CategoryForm
 
         }
 
-        private void BtnUpdate_ButtonClick(object sender, EventArgs e)
+        private void BtnUpdateCompany_ButtonClick(object sender, EventArgs e)
         {
             if (dgvComanies.SelectedRows.Count == 0)
             {
@@ -105,8 +110,10 @@ namespace CatalogProject.Forms.CategoryForm
             }
 
             int selectedId = (int)dgvComanies.SelectedRows[0].Cells["Id"].Value;
-            AddCompany frmAddCompany = new AddCompany(selectedId);
+            this.Hide();
+            AddCompanyFrm frmAddCompany = new AddCompanyFrm(selectedId);
             frmAddCompany.ShowDialog();
+            this.Show();
             LoadCompanies();
           
         }

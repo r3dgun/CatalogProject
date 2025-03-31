@@ -32,8 +32,13 @@ namespace CatalogProject.ProductFroms
 
         private void btnAddProduct_ButtonClick(object sender, EventArgs e)
         {
+
+            this.Hide();
+
             AddProductFrom addProductFrom = new AddProductFrom(_categoryId);
             addProductFrom.ShowDialog();
+            this.Show();
+
         }
 
         private void BtnUpdateProduct_ButtonClick(object sender, EventArgs e)
@@ -43,6 +48,12 @@ namespace CatalogProject.ProductFroms
                 MessageBox.Show("لطفاً یک ردیف را انتخاب کنید!", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            this.Hide();
+            int selectedId = (int)dgvProducts.SelectedRows[0].Cells["Id"].Value;
+
+            AddProductFrom addProductFrom = new AddProductFrom(_categoryId, selectedId);
+            this.Show();
+
             LoadCategories();
 
         }

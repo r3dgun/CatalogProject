@@ -16,7 +16,6 @@ public interface ICompanyService
     bool UpdateCategory(Models.Category category);
     bool DeleteCategory(Models.Category category);
     bool DeleteCategory(int categoryId);
-    bool UpdateCategoryProducts(int ProductId, int categoryId);
     List<Models.Category> GetCategoriesWithCompanyId(int companyId);
 
     string GetCategoriesNameWithCompanyId(int companyId);
@@ -86,16 +85,7 @@ public class CategoryService: ICompanyService
       return  _collection.Delete(categoryId);
     }
 
-    public bool UpdateCategoryProducts(int productId, int categoryId)
-    {
-        var category = GetCategoryById(categoryId);
-        if (category.ProductIds.Any(p => p == productId))
-        {
-            return false;
-        }
-        category.ProductIds.Add(productId);
-        return UpdateCategory(category);
-    }
+  
 
     public List<Models.Category> GetCategoriesWithCompanyId(int companyId)
     {
