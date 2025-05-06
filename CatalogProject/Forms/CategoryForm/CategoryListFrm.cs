@@ -68,7 +68,7 @@ namespace CatalogProject.Forms.CategoryForm
                 return;
             }
             int selectedCategoryId = (int)DgvCategories.SelectedRows[0].Cells["Id"].Value;
-            ProductsList addProductFrom = new ProductsList(selectedCategoryId);
+            ProductsListFrm addProductFrom = new ProductsListFrm(selectedCategoryId);
             this.Hide();
             addProductFrom.ShowDialog();
             this.Show();
@@ -102,7 +102,7 @@ namespace CatalogProject.Forms.CategoryForm
             var dgvCompanyModels = categories.Select(c => new DgvCategory()
             {
                 CompanyId = c.CompanyId,
-                CreatedAt = c.CreatedAt,
+                CreatedAt = c.CreatedAt.ConvertMiladiToShamsi(),
                 Description = c.Description,
                 Id = c.Id,
                 Image = Helper.LoadImageFromPath( c.Image,Helper.PathName.CategoryImage),

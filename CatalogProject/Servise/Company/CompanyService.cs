@@ -25,11 +25,10 @@ public class CompanyService: ICompanyService
 {
 
     private readonly ILiteCollection<Models.Company> _collection;
-    private readonly DatabaseContext _dbContext =DatabaseContext.Instance;
 
     public CompanyService()
     {
-        _collection = _dbContext.Companies;
+        _collection = DatabaseContext.Instance.Companies;
     }
 
 

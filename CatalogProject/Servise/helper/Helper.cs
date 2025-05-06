@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System;
 using System.Drawing;
+using System.Globalization;
 using static CatalogProject.Servise.helper.Helper;
 
 namespace CatalogProject.Servise.helper;
@@ -38,7 +39,7 @@ public static class Helper
         }
         return null;
     }
-    public static string SaveFileToDirectoryAndGetImageName(string selectedImagePath , PathName pathName)
+    public static string SaveFileToDirectoryAndGetImageName(string selectedImagePath, PathName pathName)
     {
         var saveDirectory = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), pathName.ToString());
         if (selectedImagePath == null) return null;
@@ -71,5 +72,20 @@ public static class Helper
             Console.WriteLine("خطا در ذخیره‌سازی تصویر: " + ex.Message);
             return null;
         }
+
+    }
+
+    public static DateTime ConvertMiladiToShamsi(this DateTime dateTime)
+    {
+        PersianCalendar calendar = new PersianCalendar();
+        return new DateTime(
+            calendar.GetYear(dateTime),
+            calendar.GetMonth(dateTime),
+            calendar.GetDayOfMonth(dateTime),
+            dateTime.Hour,
+            dateTime.Minute,
+            dateTime.Second,
+            dateTime.Millisecond
+        );
     }
 }

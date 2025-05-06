@@ -284,11 +284,11 @@
     <Compile Include="Forms\ProductForms\AddProductFrom.Designer.cs">
       <DependentUpon>AddProductFrom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductForms\ProductsList.cs">
+    <Compile Include="Forms\ProductForms\ProductsListFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductForms\ProductsList.Designer.cs">
-      <DependentUpon>ProductsList.cs</DependentUpon>
+    <Compile Include="Forms\ProductForms\ProductsListFrm.Designer.cs">
+      <DependentUpon>ProductsListFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlls\ProductCart.cs">
       <SubType>UserControl</SubType>
@@ -301,7 +301,6 @@
     <Compile Include="Servise\Category\CategoryService.cs" />
     <Compile Include="Servise\Company\CompanyService.cs" />
     <Compile Include="Servise\Context.cs" />
-    <Compile Include="Servise\CrudService\CrudService.cs" />
     <Compile Include="Servise\helper\Helper.cs" />
     <Compile Include="Servise\Option\OptionService.cs" />
     <Compile Include="Servise\Product\ProductService.cs" />
@@ -332,8 +331,8 @@
     <EmbeddedResource Include="Forms\ProductForms\AddProductFrom.resx">
       <DependentUpon>AddProductFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductForms\ProductsList.resx">
-      <DependentUpon>ProductsList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ProductForms\ProductsListFrm.resx">
+      <DependentUpon>ProductsListFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ShowingForms\CategoriesFrm.resx">
       <DependentUpon>CategoriesFrm.cs</DependentUpon>

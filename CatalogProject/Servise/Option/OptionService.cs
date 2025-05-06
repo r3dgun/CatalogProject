@@ -131,9 +131,6 @@ public class OptionService : IOptionService
         
     }
 
-    public void Dispose()
-    {
-        _dbContext?.Dispose();
-    }
+  
 
 }

@@ -1,6 +1,6 @@
 ﻿namespace CatalogProject.ProductFroms
 {
-    partial class ProductsList
+    partial class ProductsListFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsListFrm));
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddProduct = new System.Windows.Forms.ToolStripButton();

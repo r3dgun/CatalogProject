@@ -32,11 +32,10 @@ namespace CatalogProject.Servise.Product
     public class ProductService : IProductService
     {
         private readonly ILiteCollection<Models.Product> _collection;
-        private readonly DatabaseContext _dbContext = DatabaseContext.Instance;
 
         public ProductService()
         {
-            _collection = _dbContext.Products;
+            _collection = DatabaseContext.Instance.Products;
         }
 
         public int FindNextId()

@@ -25,11 +25,10 @@ public interface ICompanyService
 public class CategoryService: ICompanyService
 {
     private readonly ILiteCollection<Models.Category> _collection;
-    private readonly DatabaseContext _dbContext = DatabaseContext.Instance;
 
     public CategoryService()
     {
-        _collection = _dbContext.Categories;
+        _collection = DatabaseContext.Instance.Categories;
     }
 
     public int FindNextId()
@@ -37,7 +36,6 @@ public class CategoryService: ICompanyService
         int nextId = (_collection.Query().OrderByDescending(x => x.Id).FirstOrDefault()?.Id ?? 0) + 1;
         return nextId;
     }
-
     public List<Models.Category> GetAllCategories()
     {
         return _collection.FindAll().ToList();

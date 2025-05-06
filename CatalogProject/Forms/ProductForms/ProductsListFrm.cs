@@ -16,13 +16,13 @@ using CatalogProject.Servise.Product;
 
 namespace CatalogProject.ProductFroms
 {
-    public partial class ProductsList : Form
+    public partial class ProductsListFrm : Form
     {
         private int _categoryId;
         private ProductService _productService;
         private OptionService _optionService;
 
-        public ProductsList(int categoryId)
+        public ProductsListFrm(int categoryId)
         {
             InitializeComponent();
             _categoryId = categoryId;
@@ -89,7 +89,7 @@ namespace CatalogProject.ProductFroms
             var dgvProductModels = products.Select(c => new DgvProduct()
             {
                 
-                CreatedAt = c.CreatedAt,
+                CreatedAt = c.CreatedAt.ConvertMiladiToShamsi(),
                 Description = c.Description,
                 Id = c.Id,
                 Image = Helper.LoadImageFromPath(c.Image,Helper.PathName.ProductImage),
@@ -170,7 +170,7 @@ namespace CatalogProject.ProductFroms
                                 Width = 150,
                                 DefaultCellStyle = new DataGridViewCellStyle
                                 {
-                                    Format = "dd/MM/yyyy HH:mm"
+                                    Format = "yyyy/MM/dd HH:mm"
                                 }
                             },
                             new DataGridViewTextBoxColumn

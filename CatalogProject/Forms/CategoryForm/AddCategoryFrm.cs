@@ -17,16 +17,14 @@ namespace CatalogProject.Forms.CategoryForm;
     public partial class AddCategoryFrm : Form
     {
         private CategoryService _categoryService;
-        private CompanyService _companyService;
         private bool _imageChange = false;
-        private Category _category = null;
-        private int _CompanyId;
+        private readonly Category _category ;
+        private readonly int _companyId;
         public AddCategoryFrm(int companyId, int categoryId = 0)
         {
             InitializeComponent();
-            _CompanyId = companyId;
+            _companyId = companyId;
             _categoryService = new CategoryService();
-            _companyService = new CompanyService();
             if (categoryId != 0)
             {
                 _category = _categoryService.GetCategoryById(categoryId);
@@ -56,7 +54,7 @@ namespace CatalogProject.Forms.CategoryForm;
                     Helper.PathName.CategoryImage);
                 Category category = new Category()
                 {
-                    CompanyId = _CompanyId,
+                    CompanyId = _companyId,
                     Name = txtCompanyName.Text,
                     Description = txtDescribtion.Text,
                     Image = imageName

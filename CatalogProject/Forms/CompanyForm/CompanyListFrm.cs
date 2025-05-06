@@ -42,7 +42,7 @@ namespace CatalogProject.Forms.CompanyForm
             var dgvCompanyModels = companies.Select(c=>new DgvCompany
             {
                 Address = c.Address,
-                CreatedAt = c.CreatedAt,
+                CreatedAt = c.CreatedAt.ConvertMiladiToShamsi(),
                 Description = c.Description,
                 Id = c.Id,
                 Phone = c.Phone,
@@ -181,7 +181,7 @@ namespace CatalogProject.Forms.CompanyForm
                 Width = 150,
                 DefaultCellStyle = new DataGridViewCellStyle
                 {
-                    Format = "dd/MM/yyyy HH:mm"
+                    Format = "yyyy/MM/dd HH:mm"
                 }
             },
             new DataGridViewTextBoxColumn
