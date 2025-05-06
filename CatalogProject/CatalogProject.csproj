@@ -210,17 +210,17 @@
     <Compile Include="Controlls\CompanyCart.Designer.cs">
       <DependentUpon>CompanyCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CategoryForm\AddCategoryFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CategoryForm\AddCategoryFrm.Designer.cs">
-      <DependentUpon>AddCategoryFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CategoryForm\CategoryListFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CategoryForm\CategoryListFrm.Designer.cs">
       <DependentUpon>CategoryListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryForm\AddCategoryFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryForm\AddCategoryFrm.Designer.cs">
+      <DependentUpon>AddCategoryFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CompanyForm\AddCompanyFrm.cs">
       <SubType>Form</SubType>
@@ -234,29 +234,29 @@
     <Compile Include="Forms\CompanyForm\CompanyListFrm.Designer.cs">
       <DependentUpon>CompanyListFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Categories.cs">
+    <Compile Include="Forms\ShowingForms\CategoriesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Categories.Designer.cs">
-      <DependentUpon>Categories.cs</DependentUpon>
+    <Compile Include="Forms\ShowingForms\CategoriesFrm.Designer.cs">
+      <DependentUpon>CategoriesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Companies.cs">
+    <Compile Include="Forms\ShowingForms\CompaniesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Companies.Designer.cs">
-      <DependentUpon>Companies.cs</DependentUpon>
+    <Compile Include="Forms\ShowingForms\CompaniesFrm.Designer.cs">
+      <DependentUpon>CompaniesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ShowingForms\product.cs">
+    <Compile Include="Forms\ShowingForms\ProductFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ShowingForms\product.Designer.cs">
-      <DependentUpon>product.cs</DependentUpon>
+    <Compile Include="Forms\ShowingForms\ProductFrm.Designer.cs">
+      <DependentUpon>ProductFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Products.cs">
+    <Compile Include="Forms\ShowingForms\ProductsFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ShowingForms\Products.Designer.cs">
-      <DependentUpon>Products.cs</DependentUpon>
+    <Compile Include="Forms\ShowingForms\ProductsFrm.Designer.cs">
+      <DependentUpon>ProductsFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Global\GlobalSetting.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -308,11 +308,11 @@
     <EmbeddedResource Include="Controlls\CompanyCart.resx">
       <DependentUpon>CompanyCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CategoryForm\AddCategoryFrm.resx">
-      <DependentUpon>AddCategoryFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoryForm\CategoryListFrm.resx">
       <DependentUpon>CategoryListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryForm\AddCategoryFrm.resx">
+      <DependentUpon>AddCategoryFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyForm\AddCompanyFrm.resx">
       <DependentUpon>AddCompanyFrm.cs</DependentUpon>
@@ -335,8 +335,8 @@
     <EmbeddedResource Include="Forms\ProductForms\ProductsList.resx">
       <DependentUpon>ProductsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ShowingForms\Categories.resx">
-      <DependentUpon>Categories.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ShowingForms\CategoriesFrm.resx">
+      <DependentUpon>CategoriesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controlls\ProductCart.resx">
       <DependentUpon>ProductCart.cs</DependentUpon>

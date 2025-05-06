@@ -1,6 +1,6 @@
 ﻿namespace CatalogProject.Forms.ShowingForms
 {
-    partial class Categories
+    partial class CategoriesFrm
     {
         /// <summary>
         /// Required designer variable.

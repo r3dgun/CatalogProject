@@ -1,4 +1,4 @@
-﻿namespace CatalogProject.Forms.CategoryForm
+﻿namespace CatalogProject.Forms.CompanyForm
 {
     partial class CompanyListFrm
     {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CatalogProject.Forms.ShowingForms
 {
-    public partial class product : Form
+    public partial class ProductsFrm : Form
     {
-        public product()
+        public ProductsFrm()
         {
             InitializeComponent();
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CatalogProject.Global;
+using CatalogProject.Servise.Option;
 using Models;
 
 namespace CatalogProject.Servise.Product
@@ -31,7 +32,7 @@ namespace CatalogProject.Servise.Product
     public class ProductService : IProductService
     {
         private readonly ILiteCollection<Models.Product> _collection;
-        private readonly DatabaseContext _dbContext=DatabaseContext.Instance;
+        private readonly DatabaseContext _dbContext = DatabaseContext.Instance;
 
         public ProductService()
         {

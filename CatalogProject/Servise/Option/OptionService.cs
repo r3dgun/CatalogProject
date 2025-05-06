@@ -1,12 +1,7 @@
-﻿using static CatalogProject.MainForm;
-using System.IO;
-using System;
-using CatalogProject.Global;
+﻿using System;
 using LiteDB;
 using System.Collections.Generic;
 using System.Linq;
-using Models;
-using CatalogProject.Forms.ShowingForms;
 
 namespace CatalogProject.Servise.Option;
 
@@ -26,16 +21,14 @@ public interface IOptionService
     string GetProductsOptionsName(int productId);
     bool DeleteProductOptions(int productId);
 
-
 }
 public class OptionService : IOptionService
 {
     private readonly ILiteCollection<Models.Option> _collection;
-    private readonly DatabaseContext _dbContext = DatabaseContext.Instance;
 
     public OptionService()
     {
-        _collection = _dbContext.Options;
+        _collection = DatabaseContext.Instance.Options;
     }
 
     public int FindNextId()
@@ -115,7 +108,7 @@ public class OptionService : IOptionService
 
     public string GetProductsOptionsName(int productId)
     {
-        var options = GetProductsOptions(productId).Select(o => o.Name + ":" + o.Value).ToList();
+        var options = GetProductsOptions(productId).Select(o => o.Name).ToList();
 
         return string.Join(",", options);
     }

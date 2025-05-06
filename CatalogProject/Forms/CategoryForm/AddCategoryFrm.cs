@@ -13,8 +13,7 @@ using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
 using Models;
 
-namespace CatalogProject.Forms.CategoryForm
-{
+namespace CatalogProject.Forms.CategoryForm;
     public partial class AddCategoryFrm : Form
     {
         private CategoryService _categoryService;
@@ -54,7 +53,7 @@ namespace CatalogProject.Forms.CategoryForm
             if (_category == null)
             {
                 var imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
-                    Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CategoryImage"));
+                    Helper.PathName.CategoryImage);
                 Category category = new Category()
                 {
                     CompanyId = _CompanyId,
@@ -70,7 +69,7 @@ namespace CatalogProject.Forms.CategoryForm
                 if (_imageChange)
                 {
                     imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
-                        Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CategoryImage"));
+                        Helper.PathName.CategoryImage);
                 }
                 _category.Name = txtCompanyName.Text;
                 _category.Description = txtDescribtion.Text;
@@ -102,4 +101,3 @@ namespace CatalogProject.Forms.CategoryForm
         }
 
     }
-}

@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatalogProject.Forms.CategoryForm;
 using CatalogProject.Servise.Category;
 using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
 using Models;
 
-namespace CatalogProject.Forms.CategoryForm
+namespace CatalogProject.Forms.CompanyForm
 {
     public partial class CompanyListFrm : Form
     {
@@ -35,7 +36,7 @@ namespace CatalogProject.Forms.CategoryForm
             dgvComanies.DataSource = null;
             dgvComanies.Rows.Clear();
             dgvComanies.Refresh();
-            var imagePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CompanyImage");
+           
             // دریافت داده‌ها از دیتابیس
             var companies = _companyService.GetAllCompanies();
             var dgvCompanyModels = companies.Select(c=>new DgvCompany
@@ -46,7 +47,7 @@ namespace CatalogProject.Forms.CategoryForm
                 Id = c.Id,
                 Phone = c.Phone,
                 Email = c.Email,
-                Logo = Helper.LoadImageFromPath(imagePath,c.Logo),
+                Logo = Helper.LoadImageFromPath(c.Logo,Helper.PathName.CompanyImage),
                 Name = c.Name,
                 CategoryIds = _categoryService.GetCategoriesNameWithCompanyId(c.Id)
             }).ToList();

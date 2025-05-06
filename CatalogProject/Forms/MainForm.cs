@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatalogProject.Forms.CategoryForm;
+using CatalogProject.Forms.CompanyForm;
 using CatalogProject.ProductFroms;
 using LiteDB;
 
@@ -25,12 +26,7 @@ namespace CatalogProject
         {
            
         }
-        public class User
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public int Age { get; set; }
-        }
+       
       
         private void DataSettingBtn_Click(object sender, EventArgs e)
         {

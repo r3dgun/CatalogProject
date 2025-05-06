@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatalogProject.Servise.Option;
 using CatalogProject.Servise.Product;
 
 namespace CatalogProject.ProductFroms
@@ -19,14 +20,16 @@ namespace CatalogProject.ProductFroms
     {
         private int _categoryId;
         private ProductService _productService;
+        private OptionService _optionService;
 
         public ProductsList(int categoryId)
         {
             InitializeComponent();
             _categoryId = categoryId;
             _productService = new ProductService();
+            _optionService = new OptionService();
             ConfigureGridView();
-            LoadCategories();
+            LoadProducts();
 
         }
 
@@ -34,9 +37,9 @@ namespace CatalogProject.ProductFroms
         {
 
             this.Hide();
-
             AddProductFrom addProductFrom = new AddProductFrom(_categoryId);
             addProductFrom.ShowDialog();
+            LoadProducts();
             this.Show();
 
         }
@@ -50,11 +53,11 @@ namespace CatalogProject.ProductFroms
             }
             this.Hide();
             int selectedId = (int)dgvProducts.SelectedRows[0].Cells["Id"].Value;
-
             AddProductFrom addProductFrom = new AddProductFrom(_categoryId, selectedId);
+            addProductFrom.ShowDialog();
+            LoadProducts();
             this.Show();
 
-            LoadCategories();
 
         }
 
@@ -71,16 +74,16 @@ namespace CatalogProject.ProductFroms
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 int selectedId = (int)dgvProducts.SelectedRows[0].Cells["Id"].Value;
+                _optionService.DeleteProductOptions(selectedId);
                 _productService.DeleteProduct(selectedId);
-                LoadCategories();
+                LoadProducts();
             }
         }
-        private void LoadCategories()
+        private void LoadProducts()
         {
             dgvProducts.DataSource = null;
             dgvProducts.Rows.Clear();
             dgvProducts.Refresh();
-            var imagePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ProductImage");
             // دریافت داده‌ها از دیتابیس
             var products = _productService.GetProductWithCategoryId(_categoryId);
             var dgvProductModels = products.Select(c => new DgvProduct()
@@ -89,11 +92,12 @@ namespace CatalogProject.ProductFroms
                 CreatedAt = c.CreatedAt,
                 Description = c.Description,
                 Id = c.Id,
-                Image = Helper.LoadImageFromPath(imagePath, c.Image),
-                SecondImage = Helper.LoadImageFromPath(imagePath, c.SecondImage),
+                Image = Helper.LoadImageFromPath(c.Image,Helper.PathName.ProductImage),
+                SecondImage = Helper.LoadImageFromPath(c.SecondImage,Helper.PathName.ProductImage),
                 Name = c.Name,
                 MainText = c.MainText,
-                OptionIds = _productService.GetProductNameWithCategoryId(c.Id)
+                OptionIds = _optionService.GetProductsOptionsName(c.Id),
+                Price = c.Price
             }).ToList();
             // اتصال لیست به DataGridView
             dgvProducts.DataSource = dgvProductModels;

@@ -2,13 +2,23 @@
 using System.Windows.Forms;
 using System;
 using System.Drawing;
+using static CatalogProject.Servise.helper.Helper;
 
 namespace CatalogProject.Servise.helper;
 
 public static class Helper
 {
-    public static Image LoadImageFromPath(string imagePath,string imageName)
+    public enum PathName 
     {
+        CategoryImage,
+        CompanyImage,
+        ProductImage
+
+    }
+    public static Image LoadImageFromPath(string imageName,PathName pathName)
+    {
+
+        var imagePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), pathName.ToString());
         if (string.IsNullOrEmpty(imageName))
         {
             return null;
@@ -28,8 +38,9 @@ public static class Helper
         }
         return null;
     }
-    public static string SaveFileToDirectoryAndGetImageName(string selectedImagePath ,string saveDirectory)
+    public static string SaveFileToDirectoryAndGetImageName(string selectedImagePath , PathName pathName)
     {
+        var saveDirectory = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), pathName.ToString());
         if (selectedImagePath == null) return null;
 
         try

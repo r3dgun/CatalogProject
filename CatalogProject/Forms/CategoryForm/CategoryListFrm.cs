@@ -97,7 +97,6 @@ namespace CatalogProject.Forms.CategoryForm
             DgvCategories.DataSource = null;
             DgvCategories.Rows.Clear();
             DgvCategories.Refresh();
-            var imagePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CategoryImage");
             // دریافت داده‌ها از دیتابیس
             var categories = _categoryService.GetCategoriesWithCompanyId(_companyId);
             var dgvCompanyModels = categories.Select(c => new DgvCategory()
@@ -106,7 +105,7 @@ namespace CatalogProject.Forms.CategoryForm
                 CreatedAt = c.CreatedAt,
                 Description = c.Description,
                 Id = c.Id,
-                Image = Helper.LoadImageFromPath(imagePath, c.Image),
+                Image = Helper.LoadImageFromPath( c.Image,Helper.PathName.CategoryImage),
                 Name = c.Name,
                 ProductIds = _productService.GetProductNameWithCategoryId(c.Id)
             }).ToList();

@@ -14,7 +14,7 @@ using CatalogProject.Servise;
 using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
 
-namespace CatalogProject.Forms.CategoryForm
+namespace CatalogProject.Forms.CompanyForm
 {
     public partial class AddCompanyFrm : Form
     {
@@ -44,7 +44,7 @@ namespace CatalogProject.Forms.CategoryForm
             {
                 var imageName = Helper.SaveFileToDirectoryAndGetImageName(txtImageName.Text,
 
-                    Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CompanyImage"));
+                    Helper.PathName.CompanyImage);
                 Company company = new Company()
                 {
                     Address = txtAddress.Text,
@@ -66,7 +66,7 @@ namespace CatalogProject.Forms.CategoryForm
                 if (_imageChanged)
                 {
                     imageName = Helper.SaveFileToDirectoryAndGetImageName(txtImageName.Text,
-                       Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CompanyImage"));
+                       Helper.PathName.CompanyImage);
                 }
                 _company.Address = txtAddress.Text;
                 _company.Name = txtCompanyName.Text;
@@ -82,16 +82,12 @@ namespace CatalogProject.Forms.CategoryForm
             }
         }
 
-        public void FillPicBox(string imagePass)
-        {
-            PicBoxLogo.Image = Helper.LoadImageFromPath(imagePass);
-        }
+
         public void FillCompanyForUpdate(Company company)
         {
-            var imageAddress = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CompanyImage",
-                company.Logo);
-            FillPicBox(imageAddress);
-            txtImageName.Text = imageAddress;
+            var image = Helper.LoadImageFromPath(company.Logo, Helper.PathName.CompanyImage);
+            PicBoxLogo.Image = image;
+            txtImageName.Text = image.ToString();
             txtDescribtion.Text = company.Description;
             txtCompanyName.Text = company.Name;
             txtAddress.Text = company.Address;
@@ -106,7 +102,8 @@ namespace CatalogProject.Forms.CategoryForm
                 {
                     txtImageName.Text = ofd.FileName;
                     _imageChanged = true;
-                    FillPicBox(ofd.FileName);
+                    PicBoxLogo.Image = Helper.LoadImageFromPath(ofd.FileName);
+
                 }
             }
         }

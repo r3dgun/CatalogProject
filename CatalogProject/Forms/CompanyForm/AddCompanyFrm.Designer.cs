@@ -1,4 +1,4 @@
-﻿namespace CatalogProject.Forms.CategoryForm
+﻿namespace CatalogProject.Forms.CompanyForm
 {
     partial class AddCompanyFrm
     {
@@ -427,7 +427,7 @@
             this.btnAddCompany.IdleIconLeftImage = null;
             this.btnAddCompany.IdleIconRightImage = null;
             this.btnAddCompany.IndicateFocus = false;
-            this.btnAddCompany.Location = new System.Drawing.Point(298, 497);
+            this.btnAddCompany.Location = new System.Drawing.Point(438, 471);
             this.btnAddCompany.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddCompany.Name = "btnAddCompany";
             this.btnAddCompany.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -474,7 +474,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("B Nazanin", 12F);
-            this.txtAddress.Location = new System.Drawing.Point(228, 89);
+            this.txtAddress.Location = new System.Drawing.Point(228, 221);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(6);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(264, 187);
@@ -552,7 +552,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("B Nazanin", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(503, 95);
+            this.label6.Location = new System.Drawing.Point(503, 227);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 29);
@@ -567,7 +567,7 @@
             this.PicBoxLogo.BorderRadius = 63;
             this.PicBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxLogo.Image")));
             this.PicBoxLogo.IsCircle = true;
-            this.PicBoxLogo.Location = new System.Drawing.Point(90, 95);
+            this.PicBoxLogo.Location = new System.Drawing.Point(326, 88);
             this.PicBoxLogo.Name = "PicBoxLogo";
             this.PicBoxLogo.Size = new System.Drawing.Size(126, 126);
             this.PicBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -575,11 +575,11 @@
             this.PicBoxLogo.TabStop = false;
             this.PicBoxLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // AddCompany
+            // AddCompanyFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 731);
+            this.ClientSize = new System.Drawing.Size(952, 660);
             this.Controls.Add(this.PicBoxLogo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -597,7 +597,7 @@
             this.Controls.Add(this.txtCompanyName);
             this.Font = new System.Drawing.Font("B Nazanin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "AddCompany";
+            this.Name = "AddCompanyFrm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "اضافه کردن کمپانی";
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxLogo)).EndInit();
