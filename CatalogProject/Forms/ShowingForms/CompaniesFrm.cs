@@ -23,16 +23,7 @@ namespace CatalogProject.Forms.ShowingForms
   
         private void bunifuVSlider1_ValueChanged(object sender, Utilities.BunifuSlider.BunifuVScrollBar.ValueChangedEventArgs e)
         {
-            //MessageBox.Show(bunifuVSlider1.Value
-            //    .ToString());
-            int valu = 0;
-            if (valu!=bunifuVSlider1.Value)
-            {
-                valu = bunifuVSlider1.Value;
-                var x = bunifuVSlider1.VerticalScroll.Value;
-            }
-            //int page = (int)Math.Round(); // اطمینان از عدد صحیح
-            //LoadPage(page); // تابعی برای لود داده‌ها
+         
         }
     }
 }

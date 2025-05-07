@@ -565,7 +565,6 @@
             this.bunifuVSlider1.ThumbSize = Bunifu.UI.WinForms.BunifuVSlider.ThumbSizes.Large;
             this.bunifuVSlider1.ThumbStyle = Bunifu.UI.WinForms.BunifuVSlider.ThumbStyles.Outline;
             this.bunifuVSlider1.Value = 1;
-            this.bunifuVSlider1.ValueChanged += new System.EventHandler<Utilities.BunifuSlider.BunifuVScrollBar.ValueChangedEventArgs>(this.bunifuVSlider1_ValueChanged);
             // 
             // bunifuCards2
             // 
