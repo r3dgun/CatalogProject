@@ -16,5 +16,10 @@ namespace CatalogProject.Forms.ShowingForms
         {
             InitializeComponent();
         }
+
+        private void CategoriesFrm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatalogProject.Forms.CategoryForm;
 using CatalogProject.Forms.CompanyForm;
+using CatalogProject.Forms.ShowingForms;
 using CatalogProject.ProductFroms;
 using LiteDB;
 
@@ -34,6 +35,12 @@ namespace CatalogProject
             this.Hide();
             frmProductsList.ShowDialog();
             this.Show();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            CompaniesFrm companiesFrm = new CompaniesFrm();
+            companiesFrm.ShowDialog();
         }
     }
 }

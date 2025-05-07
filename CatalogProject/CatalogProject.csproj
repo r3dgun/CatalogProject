@@ -198,12 +198,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlls\CategoryCart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controlls\CategoryCart.Designer.cs">
-      <DependentUpon>CategoryCart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controlls\CompanyCart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,12 +284,6 @@
     <Compile Include="Forms\ProductForms\ProductsListFrm.Designer.cs">
       <DependentUpon>ProductsListFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controlls\ProductCart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controlls\ProductCart.Designer.cs">
-      <DependentUpon>ProductCart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servise\Category\CategoryService.cs" />
@@ -337,8 +325,11 @@
     <EmbeddedResource Include="Forms\ShowingForms\CategoriesFrm.resx">
       <DependentUpon>CategoriesFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controlls\ProductCart.resx">
-      <DependentUpon>ProductCart.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ShowingForms\CompaniesFrm.resx">
+      <DependentUpon>CompaniesFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowingForms\ProductFrm.resx">
+      <DependentUpon>ProductFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
