@@ -6,7 +6,7 @@ using System.Linq;
 using Models;
 
 namespace CatalogProject.Servise.Category;
-public interface ICompanyService
+public interface ICategoryService
 {
     int FindNextId();
     List<Models.Category> GetAllCategories();
@@ -22,13 +22,13 @@ public interface ICompanyService
     bool DeleteCategoriesWithCompanyId(int companyId);
 
 }
-public class CategoryService: ICompanyService
+public class CategoryService: ICategoryService
 {
     private readonly ILiteCollection<Models.Category> _collection;
 
-    public CategoryService()
+    public CategoryService(DatabaseContext dbContext)
     {
-        _collection = DatabaseContext.Instance.Categories;
+        _collection = dbContext.Categories;
     }
 
     public int FindNextId()

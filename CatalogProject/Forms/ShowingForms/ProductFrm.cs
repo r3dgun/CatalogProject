@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms.BunifuAnimatorNS;
 
 namespace CatalogProject.Forms.ShowingForms
 {
@@ -15,6 +17,12 @@ namespace CatalogProject.Forms.ShowingForms
         public ProductFrm()
         {
             InitializeComponent();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            bunifuTransition1.ShowSync(bunifuCards1, false, Animation.Mosaic);
+
         }
     }
 }

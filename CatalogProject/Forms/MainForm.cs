@@ -13,6 +13,7 @@ using CatalogProject.Forms.CompanyForm;
 using CatalogProject.Forms.ShowingForms;
 using CatalogProject.ProductFroms;
 using LiteDB;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CatalogProject
 {
@@ -31,7 +32,7 @@ namespace CatalogProject
       
         private void DataSettingBtn_Click(object sender, EventArgs e)
         {
-            CompanyListFrm frmProductsList = new CompanyListFrm();
+            var frmProductsList = Program.ServiceProvider.GetRequiredService<CompanyListFrm>();
             this.Hide();
             frmProductsList.ShowDialog();
             this.Show();
@@ -39,8 +40,15 @@ namespace CatalogProject
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
-            CompaniesFrm companiesFrm = new CompaniesFrm();
+            var companiesFrm = Program.ServiceProvider.GetRequiredService<CompaniesFrm>();
             companiesFrm.ShowDialog();
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+            var companiesFrm = Program.ServiceProvider.GetRequiredService<ProductFrm>();
+            companiesFrm.ShowDialog();
+            
         }
     }
 }

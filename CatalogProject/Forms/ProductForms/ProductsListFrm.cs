@@ -13,31 +13,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatalogProject.Servise.Option;
 using CatalogProject.Servise.Product;
+using CatalogProject.Forms.CompanyForm;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CatalogProject.ProductFroms
 {
     public partial class ProductsListFrm : Form
     {
         private int _categoryId;
-        private ProductService _productService;
-        private OptionService _optionService;
+        private IProductService _productService;
+        private IOptionService _optionService;
 
-        public ProductsListFrm(int categoryId)
+        public ProductsListFrm(IProductService productService,IOptionService optionService)
         {
             InitializeComponent();
+            _productService = productService;
+            _optionService = optionService;
+        
+
+        }
+        public void InitializeData( int categoryId)
+        {
             _categoryId = categoryId;
-            _productService = new ProductService();
-            _optionService = new OptionService();
             ConfigureGridView();
             LoadProducts();
 
         }
-
         private void btnAddProduct_ButtonClick(object sender, EventArgs e)
         {
 
             this.Hide();
-            AddProductFrom addProductFrom = new AddProductFrom(_categoryId);
+            var addProductFrom = Program.ServiceProvider.GetRequiredService<AddProductFrom>();
+            addProductFrom.InitializeData(_categoryId);
             addProductFrom.ShowDialog();
             LoadProducts();
             this.Show();
@@ -53,7 +60,9 @@ namespace CatalogProject.ProductFroms
             }
             this.Hide();
             int selectedId = (int)dgvProducts.SelectedRows[0].Cells["Id"].Value;
-            AddProductFrom addProductFrom = new AddProductFrom(_categoryId, selectedId);
+            var addProductFrom = Program.ServiceProvider.GetRequiredService<AddProductFrom>();
+            addProductFrom.InitializeData(_categoryId, selectedId);
+
             addProductFrom.ShowDialog();
             LoadProducts();
             this.Show();

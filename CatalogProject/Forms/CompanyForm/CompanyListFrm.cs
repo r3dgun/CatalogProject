@@ -9,23 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatalogProject.Forms.CategoryForm;
+using CatalogProject.ProductFroms;
 using CatalogProject.Servise.Category;
 using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
+using Microsoft.Extensions.DependencyInjection;
 using Models;
 
 namespace CatalogProject.Forms.CompanyForm
 {
     public partial class CompanyListFrm : Form
     {
-        private CompanyService _companyService;
-        private CategoryService _categoryService;
+        private Servise.Company.ICompanyService _companyService;
+        private ICategoryService _categoryService;
 
-        public CompanyListFrm()
+        public CompanyListFrm(ICompanyService companyService, ICategoryService categoryService)
         {
             InitializeComponent();
-            _companyService = new CompanyService();
-            _categoryService = new CategoryService();
+            _companyService = companyService;
+            _categoryService = categoryService;
             ConfigureGridView();
 
             LoadCompanies();
@@ -58,7 +60,7 @@ namespace CatalogProject.Forms.CompanyForm
         private void btnAddCompany_ButtonClick(object sender, EventArgs e)
         {
             this.Hide();
-            AddCompanyFrm frmAddCompany = new AddCompanyFrm();
+            var frmAddCompany = Program.ServiceProvider.GetRequiredService<AddCompanyFrm>();
             frmAddCompany.ShowDialog();
             this.Show();
 
@@ -74,7 +76,8 @@ namespace CatalogProject.Forms.CompanyForm
             }
 
             int selectedId = (int)dgvComanies.SelectedRows[0].Cells["Id"].Value;
-            CategoryListFrm frmCategoryList = new CategoryListFrm(selectedId);
+            var frmCategoryList = Program.ServiceProvider.GetRequiredService<CategoryListFrm>();
+            frmCategoryList.InitializeData(selectedId);
             this.Hide();
             frmCategoryList.ShowDialog();
             this.Show();
@@ -112,7 +115,7 @@ namespace CatalogProject.Forms.CompanyForm
 
             int selectedId = (int)dgvComanies.SelectedRows[0].Cells["Id"].Value;
             this.Hide();
-            AddCompanyFrm frmAddCompany = new AddCompanyFrm(selectedId);
+            var frmAddCompany = Program.ServiceProvider.GetRequiredService<AddCompanyFrm>();
             frmAddCompany.ShowDialog();
             this.Show();
             LoadCompanies();

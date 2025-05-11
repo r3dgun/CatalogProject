@@ -7,31 +7,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms;
 using CatalogProject.Servise.helper;
 using Models;
+using BunifuGradientPanel = Bunifu.UI.WinForms.BunifuGradientPanel;
 
 namespace CatalogProject.Controlls
 {
     public partial class CompanyCart : UserControl
     {
         private readonly Company _company;
-        public void InitilizeCompanyCart()
+
+
+        public CompanyCart()
         {
-            LbCompanyAddress.Text += _company.Address;
-            LbCompanyDescription.Text += _company.Description;
-            LbCompanyEmail.Text += _company.Email;
-            LbCompanyName.Text += _company.Name;
-            LbCompanyPhone.Text += _company.Phone;
-            PicBoxLogo.Image = Helper.LoadImageFromPath(_company.Logo, Helper.PathName.CompanyImage);
+            InitializeComponent();
+
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                          ControlStyles.OptimizedDoubleBuffer |
+                          ControlStyles.UserPaint, true);
+            this.UpdateStyles();
+            tableLayoutPanel.SuspendLayout();
+            tableLayoutPanel.ResumeLayout();
+     
+        }
+
+        public void HideGradiantPanel()
+        {
+            bunifuGradientPanel.Hide();
+        }
+        public BunifuGradientPanel GetBunifuGradientPanel()
+        {
+            return this.bunifuGradientPanel;
+        }
+        public void SetCartDetail(Company company)
+        {
+            BunifuCard.Visible = true;
+            lbl_CompanyName.Text = "نام شرکت :" + @"  " + company.Name;
+            lbl_CompanyAddress.Text = "تلفن :" + @"  " + company.Address;
+            lbl_CompanyDesc.Text = "آدرس :" + @"  " + company.Description;
+            lbl_CompanyPhone.Text = "ایمیل :" + @"  " + company.Phone;
+            lbl_CompanyEmail.Text = "معرفی :" + @"  " + company.Email;
+            Pic_Box.Image = Helper.LoadImageFromPath(company.Logo, Helper.PathName.CompanyImage);
+        }
+        public void HideCartDetail()
+        {
+            BunifuCard.Visible = false;
 
         }
-        public CompanyCart(Company company)
-        {
-            _company = company;
 
-            InitializeComponent();
-            InitilizeCompanyCart();
+        private void tableLayoutPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
-   
+
 }

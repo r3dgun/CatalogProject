@@ -26,9 +26,9 @@ public class OptionService : IOptionService
 {
     private readonly ILiteCollection<Models.Option> _collection;
 
-    public OptionService()
+    public OptionService(DatabaseContext dbContext)
     {
-        _collection = DatabaseContext.Instance.Options;
+        _collection = dbContext.Options;
     }
 
     public int FindNextId()

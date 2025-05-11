@@ -1,6 +1,6 @@
-﻿namespace CatalogProject.Forms.ShowingForms
+﻿namespace BunifuGradientPanelDemo
 {
-    partial class ProductsFrm
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(410, 310);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 56);
-            this.trackBar1.TabIndex = 0;
-            // 
-            // ProductsFrm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.trackBar1);
-            this.Name = "ProductsFrm";
-            this.Text = "Products";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "Form1";
         }
 
         #endregion
-
-        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

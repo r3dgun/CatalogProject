@@ -8,10 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CatalogProject.Forms.CompanyForm;
 using CatalogProject.ProductFroms;
 using CatalogProject.Servise.Category;
+using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
 using CatalogProject.Servise.Product;
+using Microsoft.Extensions.DependencyInjection;
 using Models;
 
 namespace CatalogProject.Forms.CategoryForm
@@ -19,25 +22,30 @@ namespace CatalogProject.Forms.CategoryForm
     public partial class CategoryListFrm : Form
     {
         private int _companyId;
-        private CategoryService _categoryService;
-        private ProductService _productService;
-        public CategoryListFrm( int companyId)
+        private ICategoryService _companyService;
+        private IProductService _productService;
+        public CategoryListFrm(ICategoryService categoryService,IProductService productService)
         {
             InitializeComponent();
-            _companyId = companyId;
-            _categoryService = new CategoryService();
-            _productService = new ProductService();
-            ConfigureGridView();
-            LoadCategories();
+            _companyService = categoryService;
+            _productService = productService;
+        
         }
 
+        public void InitializeData(int companyId)
+        {
+            _companyId = companyId;
+            ConfigureGridView();
+            LoadCategories();
+
+        }
         private void btnAddCategory_ButtonClick(object sender, EventArgs e)
         {
             this.Hide();
-            AddCategoryFrm frmAddCategory = new AddCategoryFrm(_companyId);
+            var frmAddCategory = Program.ServiceProvider.GetRequiredService<AddCategoryFrm>();
+            frmAddCategory.InitializeData(_companyId);
             frmAddCategory.ShowDialog();
             this.Show();
-
             LoadCategories();
 
         }
@@ -54,7 +62,7 @@ namespace CatalogProject.Forms.CategoryForm
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 int selectedId = (int)DgvCategories.SelectedRows[0].Cells["Id"].Value;
-                _categoryService.DeleteCategory(selectedId);
+                _companyService.DeleteCategory(selectedId);
                 _productService.DeleteProductWithCategoryId(selectedId);
                 LoadCategories();
             }
@@ -68,7 +76,8 @@ namespace CatalogProject.Forms.CategoryForm
                 return;
             }
             int selectedCategoryId = (int)DgvCategories.SelectedRows[0].Cells["Id"].Value;
-            ProductsListFrm addProductFrom = new ProductsListFrm(selectedCategoryId);
+            var addProductFrom = Program.ServiceProvider.GetRequiredService<ProductsListFrm>();
+            addProductFrom.InitializeData(selectedCategoryId);
             this.Hide();
             addProductFrom.ShowDialog();
             this.Show();
@@ -85,7 +94,8 @@ namespace CatalogProject.Forms.CategoryForm
             }
             int selectedId = (int)DgvCategories.SelectedRows[0].Cells["Id"].Value;
             this.Hide();
-            AddCategoryFrm frmAddCategory = new AddCategoryFrm(_companyId, selectedId);
+            var frmAddCategory = Program.ServiceProvider.GetRequiredService<AddCategoryFrm>();
+            frmAddCategory.InitializeData(_companyId, selectedId);
             frmAddCategory.ShowDialog();
             this.Show();
 
@@ -98,7 +108,7 @@ namespace CatalogProject.Forms.CategoryForm
             DgvCategories.Rows.Clear();
             DgvCategories.Refresh();
             // دریافت داده‌ها از دیتابیس
-            var categories = _categoryService.GetCategoriesWithCompanyId(_companyId);
+            var categories = _companyService.GetCategoriesWithCompanyId(_companyId);
             var dgvCompanyModels = categories.Select(c => new DgvCategory()
             {
                 CompanyId = c.CompanyId,

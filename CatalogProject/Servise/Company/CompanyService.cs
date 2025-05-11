@@ -26,9 +26,9 @@ public class CompanyService: ICompanyService
 
     private readonly ILiteCollection<Models.Company> _collection;
 
-    public CompanyService()
+    public CompanyService(DatabaseContext dbContext)
     {
-        _collection = DatabaseContext.Instance.Companies;
+        _collection = dbContext.Companies;
     }
 
 

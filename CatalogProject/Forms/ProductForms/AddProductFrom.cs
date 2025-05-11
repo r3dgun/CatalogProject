@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CatalogProject.Forms.ShowingForms;
 using CatalogProject.Servise.Category;
+using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
 using CatalogProject.Servise.Option;
 using CatalogProject.Servise.Product;
@@ -24,19 +25,23 @@ namespace CatalogProject.ProductFroms
         private bool _mainImageChange = false;
         private bool _secondImageChange = false;
 
-        private ProductService _productService;
-        private CategoryService _categoryService;
-        private OptionService _optionService;
+        private IProductService _productService;
+        private IOptionService _optionService;
         private int _categoryId;
 
 
-        public AddProductFrom(int categoryId, int productId = 0)
+        public AddProductFrom(ICategoryService categoryService,ICompanyService companyService,IProductService productService, IOptionService optionService)
+        {
+            InitializeComponent();
+            _optionService = optionService;
+            _productService =productService;
+           
+
+        }
+        public void InitializeData(int categoryId, int productId = 0)
         {
             _categoryId = categoryId;
-            InitializeComponent();
-            _categoryService = new CategoryService();
-            _optionService = new OptionService();
-            _productService = new ProductService();
+
             if (productId != 0)
             {
                 _product = _productService.GetProductById(productId);
@@ -44,9 +49,7 @@ namespace CatalogProject.ProductFroms
                 btnSaveProduct.Text = "بروزرسانی محصول";
                 InitializeForm(_options, _product);
             }
-
         }
-
 
         private void InitializeForm(List<Option> options, Product product)
         {

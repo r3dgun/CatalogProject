@@ -33,9 +33,9 @@ namespace CatalogProject.Servise.Product
     {
         private readonly ILiteCollection<Models.Product> _collection;
 
-        public ProductService()
+        public ProductService(DatabaseContext dbContext)
         {
-            _collection = DatabaseContext.Instance.Products;
+            _collection = dbContext.Products;
         }
 
         public int FindNextId()

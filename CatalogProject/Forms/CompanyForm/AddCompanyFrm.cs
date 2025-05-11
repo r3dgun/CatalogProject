@@ -13,17 +13,18 @@ using System.Windows.Forms;
 using CatalogProject.Servise;
 using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
+using CompanyService = CatalogProject.Servise.Company.CompanyService;
 
 namespace CatalogProject.Forms.CompanyForm
 {
     public partial class AddCompanyFrm : Form
     {
-        private CompanyService _companyService;
+        private ICompanyService _companyService;
         private Company _company = null;
         private bool _imageChanged = false;
-        public AddCompanyFrm(int companyId = 0)
+        public AddCompanyFrm( ICompanyService companyService,int companyId = 0)
         {
-            _companyService = new CompanyService();
+            _companyService = companyService;
             InitializeComponent();
             if (companyId != 0)
             {

@@ -14,88 +14,94 @@ using CatalogProject.Servise.helper;
 using Models;
 
 namespace CatalogProject.Forms.CategoryForm;
-    public partial class AddCategoryFrm : Form
+public partial class AddCategoryFrm : Form
+{
+    private ICategoryService _categoryService;
+    private bool _imageChange = false;
+    private  Category _category;
+    private  int _companyId;
+    public AddCategoryFrm(ICategoryService categoryService, int companyId, int categoryId = 0)
     {
-        private CategoryService _categoryService;
-        private bool _imageChange = false;
-        private readonly Category _category ;
-        private readonly int _companyId;
-        public AddCategoryFrm(int companyId, int categoryId = 0)
-        {
-            InitializeComponent();
-            _companyId = companyId;
-            _categoryService = new CategoryService();
-            if (categoryId != 0)
-            {
-                _category = _categoryService.GetCategoryById(categoryId);
-                FillCategoryForUpdate(_category);
-            }
-        }
-        public void FillCategoryForUpdate(Category category)
-        {
-            var imageAddress = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CategoryImage",
-                category.Image);
-            FillPicBox(imageAddress);
-            txtCategoryImageName.Text = imageAddress;
-            txtDescribtion.Text = category.Description;
-            txtCompanyName.Text = category.Name;
-        }
-        private void btnInsertCategory_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtCompanyName.Text) || (string.IsNullOrEmpty(txtCategoryImageName.Text)))
-            {
-                MessageBox.Show("مشخصات را درست وارد کنید");
-                return;
-            }
+        InitializeComponent();
+       
+        _categoryService = categoryService;
+       
+    }
+    public void InitializeData(int companyId, int categoryId = 0)
+    {
+        _companyId = companyId;
 
-            if (_category == null)
+        if (categoryId != 0)
+        {
+            _category = _categoryService.GetCategoryById(categoryId);
+            FillCategoryForUpdate(_category);
+        }
+    }
+    public void FillCategoryForUpdate(Category category)
+    {
+        var imageAddress = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "CategoryImage",
+            category.Image);
+        FillPicBox(imageAddress);
+        txtCategoryImageName.Text = imageAddress;
+        txtDescribtion.Text = category.Description;
+        txtCompanyName.Text = category.Name;
+    }
+    private void btnInsertCategory_Click(object sender, EventArgs e)
+    {
+        if (string.IsNullOrEmpty(txtCompanyName.Text) || (string.IsNullOrEmpty(txtCategoryImageName.Text)))
+        {
+            MessageBox.Show("مشخصات را درست وارد کنید");
+            return;
+        }
+
+        if (_category == null)
+        {
+            var imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
+                Helper.PathName.CategoryImage);
+            Category category = new Category()
             {
-                var imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
+                CompanyId = _companyId,
+                Name = txtCompanyName.Text,
+                Description = txtDescribtion.Text,
+                Image = imageName
+            };
+            var categoryId = _categoryService.InsertCategory(category);
+        }
+        else
+        {
+            string imageName = null;
+            if (_imageChange)
+            {
+                imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
                     Helper.PathName.CategoryImage);
-                Category category = new Category()
-                {
-                    CompanyId = _companyId,
-                    Name = txtCompanyName.Text,
-                    Description = txtDescribtion.Text,
-                    Image = imageName
-                };
-                var categoryId = _categoryService.InsertCategory(category);
             }
-            else
-            {
-                string imageName = null;
-                if (_imageChange)
-                {
-                    imageName = Helper.SaveFileToDirectoryAndGetImageName(txtCategoryImageName.Text,
-                        Helper.PathName.CategoryImage);
-                }
-                _category.Name = txtCompanyName.Text;
-                _category.Description = txtDescribtion.Text;
-                _category.Image = _imageChange ? imageName : _category.Image;
+            _category.Name = txtCompanyName.Text;
+            _category.Description = txtDescribtion.Text;
+            _category.Image = _imageChange ? imageName : _category.Image;
 
 
-                var categoryId = _categoryService.InsertCategory(_category);
-            }
-            this.Close();
-
+            var categoryId = _categoryService.InsertCategory(_category);
         }
-
-        public void FillPicBox(string imagePass)
-        {
-            PicBoxImage.Image = Helper.LoadImageFromPath(imagePass);
-        }
-
-        private void btnSaveImage_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog { Filter = "تصاویر|*.jpg;*.png;*.bmp;*.gif" })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    txtCategoryImageName.Text = ofd.FileName;
-                    FillPicBox(ofd.FileName);
-                    _imageChange = true;
-                }
-            }
-        }
+        this.Close();
 
     }
+
+    public void FillPicBox(string imagePass)
+    {
+        PicBoxImage.Image = Helper.LoadImageFromPath(imagePass);
+    }
+
+    private void btnSaveImage_Click(object sender, EventArgs e)
+    {
+        using (OpenFileDialog ofd = new OpenFileDialog { Filter = "تصاویر|*.jpg;*.png;*.bmp;*.gif" })
+        {
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                txtCategoryImageName.Text = ofd.FileName;
+                FillPicBox(ofd.FileName);
+                _imageChange = true;
+            }
+        }
+    }
+
+}

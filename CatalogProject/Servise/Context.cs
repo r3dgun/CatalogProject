@@ -7,19 +7,13 @@ namespace CatalogProject.Servise;
 
 public class DatabaseContext : IDisposable
 {
-    private static readonly Lazy<DatabaseContext> _instance = new Lazy<DatabaseContext>(() => new DatabaseContext());
-    private static readonly Lazy<LiteDatabase> _lazyDb = new(() => new LiteDatabase(GlobalSetting.DataBaseName));
     private readonly LiteDatabase _db;
     private bool _disposed;
 
-    // Private constructor to prevent direct instantiation
-    private DatabaseContext()
+    public DatabaseContext()
     {
-        _db = _lazyDb.Value;
+        _db = new LiteDatabase(GlobalSetting.DataBaseName);
     }
-
-    // Public property to access the singleton instance
-    public static DatabaseContext Instance => _instance.Value;
 
     public ILiteCollection<Models.Company> Companies => _db.GetCollection<Models.Company>("companies");
     public ILiteCollection<Models.Category> Categories => _db.GetCollection<Models.Category>("categories");
