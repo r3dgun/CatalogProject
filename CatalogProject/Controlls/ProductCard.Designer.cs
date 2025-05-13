@@ -1,6 +1,6 @@
 ﻿namespace CatalogProject.Controlls
 {
-    partial class CompanyCart
+    partial class ProductCard
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyCart));
-            this.BunifuCard = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuGradientPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductCard));
+            this.bunifuCard = new Bunifu.Framework.UI.BunifuCards();
+            this.GradientPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_CompanyName = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl_CompanyPhone = new Bunifu.UI.WinForms.BunifuLabel();
@@ -38,45 +38,45 @@
             this.lbl_CompanyEmail = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl_CompanyDesc = new Bunifu.UI.WinForms.BunifuLabel();
             this.Pic_Box = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.BunifuCard.SuspendLayout();
-            this.bunifuGradientPanel.SuspendLayout();
+            this.bunifuCard.SuspendLayout();
+            this.GradientPanel.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Box)).BeginInit();
             this.SuspendLayout();
             // 
-            // BunifuCard
+            // bunifuCard
             // 
-            this.BunifuCard.BackColor = System.Drawing.Color.Transparent;
-            this.BunifuCard.BorderRadius = 25;
-            this.BunifuCard.BottomSahddow = true;
-            this.BunifuCard.color = System.Drawing.Color.Tomato;
-            this.BunifuCard.Controls.Add(this.bunifuGradientPanel);
-            this.BunifuCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BunifuCard.LeftSahddow = false;
-            this.BunifuCard.Location = new System.Drawing.Point(0, 0);
-            this.BunifuCard.Name = "BunifuCard";
-            this.BunifuCard.RightSahddow = true;
-            this.BunifuCard.ShadowDepth = 20;
-            this.BunifuCard.Size = new System.Drawing.Size(533, 472);
-            this.BunifuCard.TabIndex = 0;
+            this.bunifuCard.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCard.BorderRadius = 5;
+            this.bunifuCard.BottomSahddow = true;
+            this.bunifuCard.color = System.Drawing.Color.Tomato;
+            this.bunifuCard.Controls.Add(this.GradientPanel);
+            this.bunifuCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCard.LeftSahddow = false;
+            this.bunifuCard.Location = new System.Drawing.Point(0, 0);
+            this.bunifuCard.Name = "bunifuCard";
+            this.bunifuCard.RightSahddow = true;
+            this.bunifuCard.ShadowDepth = 20;
+            this.bunifuCard.Size = new System.Drawing.Size(349, 627);
+            this.bunifuCard.TabIndex = 0;
             // 
-            // bunifuGradientPanel
+            // GradientPanel
             // 
-            this.bunifuGradientPanel.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel.BackgroundImage")));
-            this.bunifuGradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel.BorderRadius = 0;
-            this.bunifuGradientPanel.Controls.Add(this.tableLayoutPanel);
-            this.bunifuGradientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(92)))), ((int)(((byte)(188)))));
-            this.bunifuGradientPanel.GradientBottomRight = System.Drawing.Color.DeepPink;
-            this.bunifuGradientPanel.GradientTopLeft = System.Drawing.Color.DodgerBlue;
-            this.bunifuGradientPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
-            this.bunifuGradientPanel.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel.Name = "bunifuGradientPanel";
-            this.bunifuGradientPanel.Quality = 10;
-            this.bunifuGradientPanel.Size = new System.Drawing.Size(533, 472);
-            this.bunifuGradientPanel.TabIndex = 10;
+            this.GradientPanel.BackColor = System.Drawing.Color.Transparent;
+            this.GradientPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("GradientPanel.BackgroundImage")));
+            this.GradientPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GradientPanel.BorderRadius = 1;
+            this.GradientPanel.Controls.Add(this.tableLayoutPanel);
+            this.GradientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GradientPanel.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(92)))), ((int)(((byte)(188)))));
+            this.GradientPanel.GradientBottomRight = System.Drawing.Color.DeepPink;
+            this.GradientPanel.GradientTopLeft = System.Drawing.Color.DodgerBlue;
+            this.GradientPanel.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
+            this.GradientPanel.Location = new System.Drawing.Point(0, 5);
+            this.GradientPanel.Name = "GradientPanel";
+            this.GradientPanel.Quality = 10;
+            this.GradientPanel.Size = new System.Drawing.Size(347, 619);
+            this.GradientPanel.TabIndex = 1;
             // 
             // tableLayoutPanel
             // 
@@ -103,8 +103,8 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(533, 472);
-            this.tableLayoutPanel.TabIndex = 18;
+            this.tableLayoutPanel.Size = new System.Drawing.Size(347, 619);
+            this.tableLayoutPanel.TabIndex = 19;
             // 
             // lbl_CompanyName
             // 
@@ -112,7 +112,7 @@
             this.lbl_CompanyName.AutoEllipsis = false;
             this.lbl_CompanyName.CursorType = null;
             this.lbl_CompanyName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CompanyName.Location = new System.Drawing.Point(386, 213);
+            this.lbl_CompanyName.Location = new System.Drawing.Point(200, 278);
             this.lbl_CompanyName.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CompanyName.Name = "lbl_CompanyName";
             this.lbl_CompanyName.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -129,7 +129,7 @@
             this.lbl_CompanyPhone.AutoEllipsis = false;
             this.lbl_CompanyPhone.CursorType = null;
             this.lbl_CompanyPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CompanyPhone.Location = new System.Drawing.Point(418, 264);
+            this.lbl_CompanyPhone.Location = new System.Drawing.Point(232, 346);
             this.lbl_CompanyPhone.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CompanyPhone.Name = "lbl_CompanyPhone";
             this.lbl_CompanyPhone.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -146,7 +146,7 @@
             this.lbl_CompanyAddress.AutoEllipsis = false;
             this.lbl_CompanyAddress.CursorType = null;
             this.lbl_CompanyAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CompanyAddress.Location = new System.Drawing.Point(411, 315);
+            this.lbl_CompanyAddress.Location = new System.Drawing.Point(225, 414);
             this.lbl_CompanyAddress.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CompanyAddress.Name = "lbl_CompanyAddress";
             this.lbl_CompanyAddress.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -163,7 +163,7 @@
             this.lbl_CompanyEmail.AutoEllipsis = false;
             this.lbl_CompanyEmail.CursorType = null;
             this.lbl_CompanyEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CompanyEmail.Location = new System.Drawing.Point(413, 366);
+            this.lbl_CompanyEmail.Location = new System.Drawing.Point(227, 482);
             this.lbl_CompanyEmail.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CompanyEmail.Name = "lbl_CompanyEmail";
             this.lbl_CompanyEmail.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -180,7 +180,7 @@
             this.lbl_CompanyDesc.AutoEllipsis = false;
             this.lbl_CompanyDesc.CursorType = null;
             this.lbl_CompanyDesc.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CompanyDesc.Location = new System.Drawing.Point(402, 417);
+            this.lbl_CompanyDesc.Location = new System.Drawing.Point(216, 550);
             this.lbl_CompanyDesc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CompanyDesc.Name = "lbl_CompanyDesc";
             this.lbl_CompanyDesc.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -196,26 +196,26 @@
             this.Pic_Box.AllowFocused = false;
             this.Pic_Box.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Pic_Box.AutoSizeHeight = true;
-            this.Pic_Box.BorderRadius = 100;
+            this.Pic_Box.BorderRadius = 118;
             this.Pic_Box.Image = ((System.Drawing.Image)(resources.GetObject("Pic_Box.Image")));
             this.Pic_Box.IsCircle = true;
-            this.Pic_Box.Location = new System.Drawing.Point(166, 6);
+            this.Pic_Box.Location = new System.Drawing.Point(55, 20);
             this.Pic_Box.Name = "Pic_Box";
-            this.Pic_Box.Size = new System.Drawing.Size(201, 201);
+            this.Pic_Box.Size = new System.Drawing.Size(237, 237);
             this.Pic_Box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pic_Box.TabIndex = 9;
             this.Pic_Box.TabStop = false;
             this.Pic_Box.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // CompanyCart
+            // ProductCard
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.BunifuCard);
-            this.Font = new System.Drawing.Font("B Nazanin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Name = "CompanyCart";
-            this.Size = new System.Drawing.Size(533, 472);
-            this.BunifuCard.ResumeLayout(false);
-            this.bunifuGradientPanel.ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bunifuCard);
+            this.Name = "ProductCard";
+            this.Size = new System.Drawing.Size(349, 627);
+            this.bunifuCard.ResumeLayout(false);
+            this.GradientPanel.ResumeLayout(false);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Box)).EndInit();
@@ -225,8 +225,8 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCards BunifuCard;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel;
+        private Bunifu.Framework.UI.BunifuCards bunifuCard;
+        private Bunifu.UI.WinForms.BunifuGradientPanel GradientPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private Bunifu.UI.WinForms.BunifuLabel lbl_CompanyName;
         private Bunifu.UI.WinForms.BunifuLabel lbl_CompanyPhone;

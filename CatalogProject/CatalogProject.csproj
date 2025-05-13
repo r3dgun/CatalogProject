@@ -222,6 +222,12 @@
     <Compile Include="Controlls\CompanyCart.Designer.cs">
       <DependentUpon>CompanyCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controlls\ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlls\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CategoryForm\CategoryListFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,8 +322,14 @@
     <Compile Include="Servise\helper\Helper.cs" />
     <Compile Include="Servise\Option\OptionService.cs" />
     <Compile Include="Servise\Product\ProductService.cs" />
+    <EmbeddedResource Include="Controlls\CategoryCard.resx">
+      <DependentUpon>CategoryCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controlls\CompanyCart.resx">
       <DependentUpon>CompanyCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlls\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoryForm\CategoryListFrm.resx">
       <DependentUpon>CategoryListFrm.cs</DependentUpon>

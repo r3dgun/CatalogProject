@@ -1,17 +1,15 @@
-﻿using Bunifu.UI.WinForms.BunifuAnimatorNS;
+﻿using CatalogProject.Controlls;
 using CatalogProject.Servise.Company;
 using CatalogProject.Servise.helper;
+using Microsoft.Extensions.DependencyInjection;
 using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CatalogProject.Controlls;
-using BunifuTransition = BunifuAnimatorNS.BunifuTransition;
-using System.Reflection;
 
 namespace CatalogProject.Forms.ShowingForms
 {
@@ -21,47 +19,33 @@ namespace CatalogProject.Forms.ShowingForms
         private readonly ICompanyService _companyService;
         private int _cardCount;
         private int _pageNumber;
-        private List<CompanyCart> companyCards ;
+        private List<CompanyCart> companyCards;
 
 
         public CompaniesFrm(ICompanyService companyService)
         {
             InitializeComponent();
             MakeFormFaster();
-            companyCards = tableLayoutPanel1.Controls.OfType<CompanyCart>().OrderBy(cc=>cc.Name).ToList();
+            companyCards = tableLayoutPanel1.Controls.OfType<CompanyCart>().OrderBy(cc => cc.Name).ToList();
             _companyService = companyService;
             _companies = _companyService.GetAllCompanies();
             SetPageCount();
             _pageNumber = 1;
+
         }
 
-        private void MakeFormFaster()
-        {
-            // فعال کردن Double Buffering برای فرم
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
-                          ControlStyles.OptimizedDoubleBuffer |
-                          ControlStyles.UserPaint |
-                          ControlStyles.ResizeRedraw, true);
-            this.UpdateStyles();
 
-            // فعال کردن Double Buffering برای TableLayoutPanel
-            typeof(TableLayoutPanel).InvokeMember("DoubleBuffered",
-                System.Reflection.BindingFlags.SetProperty |
-                System.Reflection.BindingFlags.Instance |
-                System.Reflection.BindingFlags.NonPublic,
-                null, tableLayoutPanel1, new object[] { true });
+        private async void MakeFormFaster()
+        {
 
             // فعال کردن Double Buffering برای همه کنترل‌های داخل فرم
-            EnableDoubleBufferingForAllControls(this);
+            await EnableDoubleBufferingForAllControls(this);
 
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel1.ResumeLayout(false);
-            // تنظیمات بهینه برای BunifuTransition
-            bunifuTransition1.Interval = 20; // افزایش سرعت فریم
 
         }
-        private void EnableDoubleBufferingForAllControls(Control container)
+        private async Task EnableDoubleBufferingForAllControls(Control container)
         {
             foreach (Control control in container.Controls)
             {
@@ -78,7 +62,7 @@ namespace CatalogProject.Forms.ShowingForms
                 // اعمال برای کنترل‌های داخلی به صورت بازگشتی
                 if (control.Controls.Count > 0)
                 {
-                    EnableDoubleBufferingForAllControls(control);
+                    await EnableDoubleBufferingForAllControls(control);
                 }
             }
         }
@@ -137,8 +121,9 @@ namespace CatalogProject.Forms.ShowingForms
         private async void HideAsyncGradiantPanel(int cardCount)
         {
             //var bunifuCards = new[] { bunifuCards1, bunifuCards2, bunifuCards3, bunifuCards4 };
+            bunifuTransition1.Interval = 20; // افزایش سرعت فریم
 
-            var randomAnimation = GetRandomAnimations();
+            var randomAnimation = Helper.GetRandomAnimations();
             bunifuTransition1.MaxAnimationTime = 2500;
             for (int i = 0; i < cardCount; i++)
             {
@@ -149,7 +134,7 @@ namespace CatalogProject.Forms.ShowingForms
         }
         private async void ShowCards(int cardCount)
         {
-            var randomAnimation = GetRandomAnimations();
+            var randomAnimation = Helper.GetRandomAnimations();
             bunifuTransition1.MaxAnimationTime = 2500;
             for (int i = 0; i < cardCount; i++)
             {
@@ -163,52 +148,8 @@ namespace CatalogProject.Forms.ShowingForms
 
         }
 
-        private List<Animation> GetRandomAnimations()
-        {
-            List<Animation> allAnimations = new List<Animation>
-            {
-                Animation.Particles,
-                Animation.HorizSlideAndRotate,
-                Animation.HorizBlind,
-                Animation.Leaf,
-                Animation.Mosaic,
-                Animation.Rotate,
-                Animation.Transparent,
-                Animation.VertBlind,
-                Animation.VertSlide,
-                Animation.HorizSlide,
-                Animation.Scale,
-                Animation.ScaleAndRotate,
-                Animation.ScaleAndHorizSlide,
-                // می‌توانید انیمیشن‌های دیگری را اضافه کنید
-            };
-            // لیست تمامی انیمیشن‌ها را دریافت می‌کنیم
-            Random random = new Random();
-            List<Animation> randomAnimations = new List<Animation>();
 
-            // اگر تعداد انیمیشن‌ها بیشتر از 4 باشد
-            while (randomAnimations.Count < 4)
-            {
-                Animation selectedAnimation = allAnimations[random.Next(allAnimations.Count)];
 
-                // اگر انیمیشن انتخاب‌شده قبلاً انتخاب نشده باشد، آن را اضافه می‌کنیم
-                if (!randomAnimations.Contains(selectedAnimation))
-                {
-                    randomAnimations.Add(selectedAnimation);
-                }
-            }
-
-            return randomAnimations;
-        }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PageChanger_Scroll(object sender, Utilities.BunifuSlider.BunifuVScrollBar.ScrollEventArgs e)
-        {
-
-        }
 
         bool _isRun = false;
 
@@ -231,9 +172,31 @@ namespace CatalogProject.Forms.ShowingForms
             }
         }
 
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
 
+        private async void companyCart_Click(object sender, EventArgs e)
+        {
+            if (sender is CompanyCart cart)
+            {
+                // Show the loader
+                //bunifuLoader1.Visible = true;
+
+                // Get the form instance
+                var categoriesFrm = Program.ServiceProvider.GetRequiredService<CategoriesFrm>();
+
+                // Initialize data in background
+
+                // You may need to adjust this if InitializeData must run on UI thread
+                categoriesFrm.InitializeData(_companies[int.Parse(cart.Tag.ToString())].Id);
+
+
+                // Hide the loader after initialization is complete
+                //bunifuLoader1.Visible = false;
+
+                // Show the form
+                this.Hide();
+                categoriesFrm.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

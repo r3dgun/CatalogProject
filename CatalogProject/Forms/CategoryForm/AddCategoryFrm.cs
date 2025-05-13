@@ -20,7 +20,7 @@ public partial class AddCategoryFrm : Form
     private bool _imageChange = false;
     private  Category _category;
     private  int _companyId;
-    public AddCategoryFrm(ICategoryService categoryService, int companyId, int categoryId = 0)
+    public AddCategoryFrm(ICategoryService categoryService)
     {
         InitializeComponent();
        

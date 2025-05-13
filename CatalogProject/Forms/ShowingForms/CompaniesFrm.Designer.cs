@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompaniesFrm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             this.LbCompanyPhone = new Bunifu.UI.WinForms.BunifuLabel();
             this.LbCompanyAddress = new Bunifu.UI.WinForms.BunifuLabel();
             this.LbCompanyEmail = new Bunifu.UI.WinForms.BunifuLabel();
@@ -162,9 +162,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.27881F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.8152F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.9538F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Controls.Add(this.PageChanger, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_Exit, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.companyCart1, 0, 0);
@@ -179,7 +179,6 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1342, 773);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -207,7 +206,7 @@
             this.PageChanger.DurationBeforeShrink = 2000;
             this.PageChanger.ElapsedColor = System.Drawing.Color.DodgerBlue;
             this.PageChanger.LargeChange = 1;
-            this.PageChanger.Location = new System.Drawing.Point(1199, 50);
+            this.PageChanger.Location = new System.Drawing.Point(1211, 50);
             this.PageChanger.Margin = new System.Windows.Forms.Padding(5, 50, 5, 50);
             this.PageChanger.Maximum = 4;
             this.PageChanger.Minimum = 1;
@@ -223,7 +222,7 @@
             this.PageChanger.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.PageChanger.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.PageChanger.ShrinkSizeLimit = 3;
-            this.PageChanger.Size = new System.Drawing.Size(138, 286);
+            this.PageChanger.Size = new System.Drawing.Size(126, 286);
             this.PageChanger.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.PageChanger.SliderStyle = Bunifu.UI.WinForms.BunifuVSlider.SliderStyles.Thin;
             this.PageChanger.SliderThumbStyle = Utilities.BunifuSlider.BunifuVScrollBar.SliderThumbStyles.Circular;
@@ -257,11 +256,11 @@
             this.btn_Exit.ColorContrastOnClick = 45;
             this.btn_Exit.ColorContrastOnHover = 45;
             this.btn_Exit.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btn_Exit.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btn_Exit.CustomizableEdges = borderEdges2;
             this.bunifuTransition1.SetDecoration(this.btn_Exit, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_Exit.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -287,7 +286,7 @@
             this.btn_Exit.IdleIconLeftImage = null;
             this.btn_Exit.IdleIconRightImage = null;
             this.btn_Exit.IndicateFocus = false;
-            this.btn_Exit.Location = new System.Drawing.Point(1199, 391);
+            this.btn_Exit.Location = new System.Drawing.Point(1211, 391);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -322,7 +321,7 @@
             this.btn_Exit.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btn_Exit.OnPressedState.IconLeftImage = null;
             this.btn_Exit.OnPressedState.IconRightImage = null;
-            this.btn_Exit.Size = new System.Drawing.Size(138, 65);
+            this.btn_Exit.Size = new System.Drawing.Size(126, 65);
             this.btn_Exit.TabIndex = 8;
             this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Exit.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -338,18 +337,22 @@
             this.companyCart1.Font = new System.Drawing.Font("B Nazanin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.companyCart1.Location = new System.Drawing.Point(3, 3);
             this.companyCart1.Name = "companyCart1";
-            this.companyCart1.Size = new System.Drawing.Size(601, 380);
+            this.companyCart1.Size = new System.Drawing.Size(597, 380);
             this.companyCart1.TabIndex = 9;
+            this.companyCart1.Tag = "0";
+            this.companyCart1.Click += new System.EventHandler(this.companyCart_Click);
             // 
             // companyCart2
             // 
             this.bunifuTransition1.SetDecoration(this.companyCart2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.companyCart2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.companyCart2.Font = new System.Drawing.Font("B Nazanin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.companyCart2.Location = new System.Drawing.Point(610, 3);
+            this.companyCart2.Location = new System.Drawing.Point(606, 3);
             this.companyCart2.Name = "companyCart2";
-            this.companyCart2.Size = new System.Drawing.Size(581, 380);
+            this.companyCart2.Size = new System.Drawing.Size(597, 380);
             this.companyCart2.TabIndex = 10;
+            this.companyCart2.Tag = "1";
+            this.companyCart2.Click += new System.EventHandler(this.companyCart_Click);
             // 
             // companyCart3
             // 
@@ -358,39 +361,43 @@
             this.companyCart3.Font = new System.Drawing.Font("B Nazanin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.companyCart3.Location = new System.Drawing.Point(3, 389);
             this.companyCart3.Name = "companyCart3";
-            this.companyCart3.Size = new System.Drawing.Size(601, 381);
+            this.companyCart3.Size = new System.Drawing.Size(597, 381);
             this.companyCart3.TabIndex = 9;
+            this.companyCart3.Tag = "2";
+            this.companyCart3.Click += new System.EventHandler(this.companyCart_Click);
             // 
             // companyCart4
             // 
             this.bunifuTransition1.SetDecoration(this.companyCart4, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.companyCart4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.companyCart4.Font = new System.Drawing.Font("B Nazanin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.companyCart4.Location = new System.Drawing.Point(610, 389);
+            this.companyCart4.Location = new System.Drawing.Point(606, 389);
             this.companyCart4.Name = "companyCart4";
-            this.companyCart4.Size = new System.Drawing.Size(581, 381);
+            this.companyCart4.Size = new System.Drawing.Size(597, 381);
             this.companyCart4.TabIndex = 10;
+            this.companyCart4.Tag = "3";
+            this.companyCart4.Click += new System.EventHandler(this.companyCart_Click);
             // 
             // bunifuTransition1
             // 
             this.bunifuTransition1.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.VertSlide;
             this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation2;
             this.bunifuTransition1.MaxAnimationTime = 2000;
             // 
             // CompaniesFrm

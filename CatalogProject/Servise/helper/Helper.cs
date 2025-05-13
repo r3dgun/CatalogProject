@@ -1,8 +1,10 @@
 ﻿using System.IO;
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using Bunifu.UI.WinForms.BunifuAnimatorNS;
 using static CatalogProject.Servise.helper.Helper;
 
 namespace CatalogProject.Servise.helper;
@@ -74,7 +76,43 @@ public static class Helper
         }
 
     }
+    public static List<Animation> GetRandomAnimations()
+    {
+        List<Animation> allAnimations = new List<Animation>
+        {
+            Animation.Particles,
+            Animation.HorizSlideAndRotate,
+            Animation.HorizBlind,
+            Animation.Leaf,
+            Animation.Mosaic,
+            Animation.Rotate,
+            Animation.Transparent,
+            Animation.VertBlind,
+            Animation.VertSlide,
+            Animation.HorizSlide,
+            Animation.Scale,
+            Animation.ScaleAndRotate,
+            Animation.ScaleAndHorizSlide,
+            // می‌توانید انیمیشن‌های دیگری را اضافه کنید
+        };
+        // لیست تمامی انیمیشن‌ها را دریافت می‌کنیم
+        Random random = new Random();
+        List<Animation> randomAnimations = new List<Animation>();
 
+        // اگر تعداد انیمیشن‌ها بیشتر از 4 باشد
+        while (randomAnimations.Count < 4)
+        {
+            Animation selectedAnimation = allAnimations[random.Next(allAnimations.Count)];
+
+            // اگر انیمیشن انتخاب‌شده قبلاً انتخاب نشده باشد، آن را اضافه می‌کنیم
+            if (!randomAnimations.Contains(selectedAnimation))
+            {
+                randomAnimations.Add(selectedAnimation);
+            }
+        }
+
+        return randomAnimations;
+    }
     public static DateTime ConvertMiladiToShamsi(this DateTime dateTime)
     {
         PersianCalendar calendar = new PersianCalendar();

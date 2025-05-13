@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CatalogProject.Servise.helper;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Framework.UI;
 using Bunifu.UI.WinForms;
-using CatalogProject.Servise.helper;
-using Models;
-using BunifuGradientPanel = Bunifu.UI.WinForms.BunifuGradientPanel;
 
 namespace CatalogProject.Controlls
 {
-    public partial class CompanyCart : UserControl
+    public partial class ProductCard : UserControl
     {
-        private readonly Company _company;
+        private readonly Product _product;
 
-        public CompanyCart()
+        public ProductCard()
         {
             InitializeComponent();
 
@@ -31,25 +29,25 @@ namespace CatalogProject.Controlls
             tableLayoutPanel.ResumeLayout();
 
             // Make sure child controls also trigger the click event
-            if (this.bunifuGradientPanel != null)
+            if (this.GradientPanel != null)
             {
                 Pic_Box.Click += (s, e) => this.OnClick(e);
-              
+
             }
 
         }
-     
+
         public void HideGradiantPanel()
         {
-            bunifuGradientPanel.Hide();
+            GradientPanel.Hide();
         }
         public BunifuGradientPanel GetBunifuGradientPanel()
         {
-            return this.bunifuGradientPanel;
+            return this.GradientPanel;
         }
         public void SetCartDetail(Company company)
         {
-            BunifuCard.Visible = true;
+            bunifuCard.Visible = true;
             lbl_CompanyName.Text = "نام شرکت :" + @"  " + company.Name;
             lbl_CompanyPhone.Text = "تلفن :" + @"  " + company.Phone;
             lbl_CompanyAddress.Text = "آدرس :" + @"  " + company.Address;
@@ -59,9 +57,8 @@ namespace CatalogProject.Controlls
         }
         public void HideCartDetail()
         {
-            BunifuCard.Visible = false;
+            bunifuCard.Visible = false;
 
         }
     }
-
 }
