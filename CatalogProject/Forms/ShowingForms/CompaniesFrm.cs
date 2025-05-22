@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -19,14 +20,18 @@ namespace CatalogProject.Forms.ShowingForms
         private readonly ICompanyService _companyService;
         private int _cardCount;
         private int _pageNumber;
-        private List<CompanyCart> companyCards;
+        private List<CompanyCard> companyCards =new List<CompanyCard>();
 
-
+        
         public CompaniesFrm(ICompanyService companyService)
         {
             InitializeComponent();
             MakeFormFaster();
-            companyCards = tableLayoutPanel1.Controls.OfType<CompanyCart>().OrderBy(cc => cc.Name).ToList();
+            companyCards.Add(companyCard1);
+            companyCards.Add(companyCard2);
+            companyCards.Add(companyCard3);
+            companyCards.Add(companyCard4);
+
             _companyService = companyService;
             _companies = _companyService.GetAllCompanies();
             SetPageCount();
@@ -91,7 +96,7 @@ namespace CatalogProject.Forms.ShowingForms
         private void SetCartDetail(List<Company> companies)
         {
             // Define arrays of controls for each card
-
+          
             // Set details for each card up to cartCount
             for (int i = 0; i < 4; i++)
             {
@@ -101,7 +106,7 @@ namespace CatalogProject.Forms.ShowingForms
                 }
                 else
                 {
-                    companyCards[i].HideCartDetail();
+                    companyCards[i].Hide();
                 }
             }
         }
@@ -115,30 +120,36 @@ namespace CatalogProject.Forms.ShowingForms
         {
             for (int i = 0; i < cardCount; i++)
             {
-                companyCards[i].HideGradiantPanel();
+                companyCards[i].Hide();
             }
         }
         private async void HideAsyncGradiantPanel(int cardCount)
         {
-            //var bunifuCards = new[] { bunifuCards1, bunifuCards2, bunifuCards3, bunifuCards4 };
+            var bunifuCards = new[] { bunifuCards1, bunifuCards2, bunifuCards3, bunifuCards4 };
             bunifuTransition1.Interval = 20; // افزایش سرعت فریم
-
             var randomAnimation = Helper.GetRandomAnimations();
             bunifuTransition1.MaxAnimationTime = 2500;
             for (int i = 0; i < cardCount; i++)
             {
-                bunifuTransition1.HideSync(companyCards[i].GetBunifuGradientPanel(), false, randomAnimation[i]);
+                bunifuCards[i].BackColor =Color.Blue;
+                bunifuTransition1.HideSync(companyCards[i], false, randomAnimation[i]);
+
             }
             await Task.Delay(300);
 
         }
         private async void ShowCards(int cardCount)
         {
+            var bunifuCards = new[] { bunifuCards1, bunifuCards2, bunifuCards3, bunifuCards4 };
+
             var randomAnimation = Helper.GetRandomAnimations();
             bunifuTransition1.MaxAnimationTime = 2500;
             for (int i = 0; i < cardCount; i++)
             {
-                bunifuTransition1.ShowSync(companyCards[i].GetBunifuGradientPanel(), false, randomAnimation[i]);
+                bunifuCards[i].BackColor = Color.Blue;
+
+                bunifuTransition1.ShowSync(companyCards[i], false, randomAnimation[i]);
+
             }
             await Task.Delay(100);
 
@@ -175,7 +186,7 @@ namespace CatalogProject.Forms.ShowingForms
 
         private async void companyCart_Click(object sender, EventArgs e)
         {
-            if (sender is CompanyCart cart)
+            if (sender is CompanyCard cart)
             {
                 // Show the loader
                 //bunifuLoader1.Visible = true;
@@ -186,7 +197,7 @@ namespace CatalogProject.Forms.ShowingForms
                 // Initialize data in background
 
                 // You may need to adjust this if InitializeData must run on UI thread
-                categoriesFrm.InitializeData(_companies[int.Parse(cart.Tag.ToString())].Id);
+                categoriesFrm.InitializeData(cart.CompanyID);
 
 
                 // Hide the loader after initialization is complete
@@ -198,5 +209,6 @@ namespace CatalogProject.Forms.ShowingForms
                 this.Show();
             }
         }
+
     }
 }

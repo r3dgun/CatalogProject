@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace CatalogProject.Forms.ShowingForms
 {
@@ -22,7 +23,9 @@ namespace CatalogProject.Forms.ShowingForms
         private int _cardCount;
         private int _pageNumber;
         private int _pageCount;
-        private List<CategoryCard> _categoryCards;
+        private List<CategoryCard> _categoryCards= new List<CategoryCard>();
+        private List<BunifuCards> _cards;
+
         private bool _isAnimationRunning = false;
         private CancellationTokenSource _animationCts;
 
@@ -83,8 +86,14 @@ namespace CatalogProject.Forms.ShowingForms
         private async Task LoadFormDataAsync()
         {
             // Ensure UI operations run on UI thread
-            await this.InvokeAsync(() => {
-                _categoryCards = tableLayoutPanel1.Controls.OfType<CategoryCard>().OrderBy(cc => cc.Name).ToList();
+            await this.InvokeAsync(() =>
+            {
+                _cards = tableLayoutPanel1.Controls.OfType<BunifuCards>().OrderBy(cc => cc.Name).ToList();
+                _categoryCards.Add(categoryCard1);
+                _categoryCards.Add(categoryCard2);
+                _categoryCards.Add(categoryCard3);
+                _categoryCards.Add(categoryCard4);
+
                 _pageNumber = 1;
                 SetPageCount();
 
@@ -134,11 +143,13 @@ namespace CatalogProject.Forms.ShowingForms
             {
                 if (i < categories.Count)
                 {
+                    _categoryCards[i].Visible = true;
+
                     _categoryCards[i].SetCartDetail(categories[i]);
                 }
                 else
                 {
-                    _categoryCards[i].HideCartDetail();
+                    _categoryCards[i].Visible = false;
                 }
             }
         }
@@ -184,7 +195,7 @@ namespace CatalogProject.Forms.ShowingForms
         {
             await ChangePage(-1);
         }
-        private async void CategoryCart_Click(object sender, EventArgs e)
+        private  void CategoryCart_Click(object sender, EventArgs e)
         {
             if (sender is CategoryCard cart)
             {
@@ -197,7 +208,7 @@ namespace CatalogProject.Forms.ShowingForms
                 // Initialize data in background
 
                 // You may need to adjust this if InitializeData must run on UI thread
-                productsFrm.InitializeData(_categories[int.Parse(cart.Tag.ToString())].Id);
+                productsFrm.InitializeData(cart.CategoryId);
 
 
                 // Hide the loader after initialization is complete

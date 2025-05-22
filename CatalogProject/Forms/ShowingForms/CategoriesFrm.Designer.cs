@@ -29,90 +29,54 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriesFrm));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.categoryCard1 = new CatalogProject.Controlls.CategoryCard();
-            this.categoryCard2 = new CatalogProject.Controlls.CategoryCard();
-            this.categoryCard3 = new CatalogProject.Controlls.CategoryCard();
-            this.categoryCard4 = new CatalogProject.Controlls.CategoryCard();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnPreviosPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.BtnNextPage = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.categoryCard1 = new CatalogProject.Controlls.CategoryCard();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.categoryCard2 = new CatalogProject.Controlls.CategoryCard();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.categoryCard3 = new CatalogProject.Controlls.CategoryCard();
+            this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
+            this.categoryCard4 = new CatalogProject.Controlls.CategoryCard();
             this.bunifuTransition1 = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            this.bunifuCards1.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
+            this.bunifuCards3.SuspendLayout();
+            this.bunifuCards4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.categoryCard1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.categoryCard2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.categoryCard3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.categoryCard4, 1, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.41264F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.52045F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.99257F));
             this.tableLayoutPanel1.Controls.Add(this.bunifuButton1, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.BtnPreviosPage, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.BtnNextPage, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuCards1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuCards2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuCards3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuCards4, 1, 2);
             this.bunifuTransition1.SetDecoration(this.tableLayoutPanel1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1323, 819);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.68391F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.908046F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.26437F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1345, 696);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // categoryCard1
-            // 
-            this.bunifuTransition1.SetDecoration(this.categoryCard1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.categoryCard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categoryCard1.Location = new System.Drawing.Point(3, 3);
-            this.categoryCard1.Name = "categoryCard1";
-            this.categoryCard1.Size = new System.Drawing.Size(589, 362);
-            this.categoryCard1.TabIndex = 0;
-            this.categoryCard1.Tag = "0";
-            this.categoryCard1.Click += new System.EventHandler(this.CategoryCart_Click);
-            // 
-            // categoryCard2
-            // 
-            this.bunifuTransition1.SetDecoration(this.categoryCard2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.categoryCard2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categoryCard2.Location = new System.Drawing.Point(598, 3);
-            this.categoryCard2.Name = "categoryCard2";
-            this.categoryCard2.Size = new System.Drawing.Size(589, 362);
-            this.categoryCard2.TabIndex = 1;
-            this.categoryCard2.Tag = "1";
-            this.categoryCard2.Click += new System.EventHandler(this.CategoryCart_Click);
-            // 
-            // categoryCard3
-            // 
-            this.bunifuTransition1.SetDecoration(this.categoryCard3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.categoryCard3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categoryCard3.Location = new System.Drawing.Point(3, 452);
-            this.categoryCard3.Name = "categoryCard3";
-            this.categoryCard3.Size = new System.Drawing.Size(589, 364);
-            this.categoryCard3.TabIndex = 2;
-            this.categoryCard3.Tag = "2";
-            this.categoryCard3.Click += new System.EventHandler(this.CategoryCart_Click);
-            // 
-            // categoryCard4
-            // 
-            this.bunifuTransition1.SetDecoration(this.categoryCard4, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.categoryCard4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categoryCard4.Location = new System.Drawing.Point(598, 452);
-            this.categoryCard4.Name = "categoryCard4";
-            this.categoryCard4.Size = new System.Drawing.Size(589, 364);
-            this.categoryCard4.TabIndex = 3;
-            this.categoryCard4.Tag = "3";
-            this.categoryCard4.Click += new System.EventHandler(this.CategoryCart_Click);
             // 
             // bunifuButton1
             // 
@@ -133,16 +97,17 @@
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges1;
             this.bunifuTransition1.SetDecoration(this.bunifuButton1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.Empty;
             this.bunifuButton1.DisabledForecolor = System.Drawing.Color.Empty;
+            this.bunifuButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.bunifuButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bunifuButton1.ForeColor = System.Drawing.Color.White;
@@ -164,7 +129,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(1193, 371);
+            this.bunifuButton1.Location = new System.Drawing.Point(1105, 314);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 1;
@@ -198,7 +163,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(127, 75);
+            this.bunifuButton1.Size = new System.Drawing.Size(237, 56);
             this.bunifuButton1.TabIndex = 6;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -225,11 +190,11 @@
             this.BtnPreviosPage.ColorContrastOnClick = 45;
             this.BtnPreviosPage.ColorContrastOnHover = 45;
             this.BtnPreviosPage.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.BtnPreviosPage.CustomizableEdges = borderEdges5;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnPreviosPage.CustomizableEdges = borderEdges2;
             this.bunifuTransition1.SetDecoration(this.BtnPreviosPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.BtnPreviosPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnPreviosPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -255,7 +220,7 @@
             this.BtnPreviosPage.IdleIconLeftImage = null;
             this.BtnPreviosPage.IdleIconRightImage = null;
             this.BtnPreviosPage.IndicateFocus = false;
-            this.BtnPreviosPage.Location = new System.Drawing.Point(442, 371);
+            this.BtnPreviosPage.Location = new System.Drawing.Point(404, 314);
             this.BtnPreviosPage.Name = "BtnPreviosPage";
             this.BtnPreviosPage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnPreviosPage.OnDisabledState.BorderRadius = 1;
@@ -289,7 +254,7 @@
             this.BtnPreviosPage.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnPreviosPage.OnPressedState.IconLeftImage = null;
             this.BtnPreviosPage.OnPressedState.IconRightImage = null;
-            this.BtnPreviosPage.Size = new System.Drawing.Size(150, 75);
+            this.BtnPreviosPage.Size = new System.Drawing.Size(150, 56);
             this.BtnPreviosPage.TabIndex = 7;
             this.BtnPreviosPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnPreviosPage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -317,11 +282,11 @@
             this.BtnNextPage.ColorContrastOnClick = 45;
             this.BtnNextPage.ColorContrastOnHover = 45;
             this.BtnNextPage.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.BtnNextPage.CustomizableEdges = borderEdges6;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.BtnNextPage.CustomizableEdges = borderEdges3;
             this.bunifuTransition1.SetDecoration(this.BtnNextPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.BtnNextPage.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnNextPage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -347,7 +312,7 @@
             this.BtnNextPage.IdleIconLeftImage = null;
             this.BtnNextPage.IdleIconRightImage = null;
             this.BtnNextPage.IndicateFocus = false;
-            this.BtnNextPage.Location = new System.Drawing.Point(598, 371);
+            this.BtnNextPage.Location = new System.Drawing.Point(560, 314);
             this.BtnNextPage.Name = "BtnNextPage";
             this.BtnNextPage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnNextPage.OnDisabledState.BorderRadius = 1;
@@ -381,7 +346,7 @@
             this.BtnNextPage.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnNextPage.OnPressedState.IconLeftImage = null;
             this.BtnNextPage.OnPressedState.IconRightImage = null;
-            this.BtnNextPage.Size = new System.Drawing.Size(150, 75);
+            this.BtnNextPage.Size = new System.Drawing.Size(150, 56);
             this.BtnNextPage.TabIndex = 7;
             this.BtnNextPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnNextPage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -390,32 +355,143 @@
             this.BtnNextPage.UseDefaultRadiusAndThickness = true;
             this.BtnNextPage.Click += new System.EventHandler(this.BtnNextPage_Click);
             // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BorderRadius = 5;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.Color.Tomato;
+            this.bunifuCards1.Controls.Add(this.categoryCard1);
+            this.bunifuTransition1.SetDecoration(this.bunifuCards1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(543, 305);
+            this.bunifuCards1.TabIndex = 8;
+            // 
+            // categoryCard1
+            // 
+            this.categoryCard1.CategoryId = 0;
+            this.bunifuTransition1.SetDecoration(this.categoryCard1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.categoryCard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryCard1.Location = new System.Drawing.Point(0, 0);
+            this.categoryCard1.Name = "categoryCard1";
+            this.categoryCard1.Size = new System.Drawing.Size(543, 305);
+            this.categoryCard1.TabIndex = 1;
+            this.categoryCard1.Click += new System.EventHandler(this.CategoryCart_Click);
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 5;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Tomato;
+            this.bunifuCards2.Controls.Add(this.categoryCard2);
+            this.bunifuTransition1.SetDecoration(this.bunifuCards2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(560, 3);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(539, 305);
+            this.bunifuCards2.TabIndex = 8;
+            // 
+            // categoryCard2
+            // 
+            this.categoryCard2.CategoryId = 0;
+            this.bunifuTransition1.SetDecoration(this.categoryCard2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.categoryCard2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryCard2.Location = new System.Drawing.Point(0, 0);
+            this.categoryCard2.Name = "categoryCard2";
+            this.categoryCard2.Size = new System.Drawing.Size(539, 305);
+            this.categoryCard2.TabIndex = 1;
+            this.categoryCard2.Load += new System.EventHandler(this.CategoryCart_Click);
+            this.categoryCard2.Click += new System.EventHandler(this.CategoryCart_Click);
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 5;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.Tomato;
+            this.bunifuCards3.Controls.Add(this.categoryCard3);
+            this.bunifuTransition1.SetDecoration(this.bunifuCards3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuCards3.LeftSahddow = false;
+            this.bunifuCards3.Location = new System.Drawing.Point(3, 376);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 20;
+            this.bunifuCards3.Size = new System.Drawing.Size(543, 309);
+            this.bunifuCards3.TabIndex = 8;
+            // 
+            // categoryCard3
+            // 
+            this.categoryCard3.CategoryId = 0;
+            this.bunifuTransition1.SetDecoration(this.categoryCard3, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.categoryCard3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryCard3.Location = new System.Drawing.Point(0, 0);
+            this.categoryCard3.Name = "categoryCard3";
+            this.categoryCard3.Size = new System.Drawing.Size(543, 309);
+            this.categoryCard3.TabIndex = 2;
+            this.categoryCard3.Load += new System.EventHandler(this.CategoryCart_Click);
+            this.categoryCard3.Click += new System.EventHandler(this.CategoryCart_Click);
+            // 
+            // bunifuCards4
+            // 
+            this.bunifuCards4.BackColor = System.Drawing.Color.White;
+            this.bunifuCards4.BorderRadius = 5;
+            this.bunifuCards4.BottomSahddow = true;
+            this.bunifuCards4.color = System.Drawing.Color.Tomato;
+            this.bunifuCards4.Controls.Add(this.categoryCard4);
+            this.bunifuTransition1.SetDecoration(this.bunifuCards4, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuCards4.LeftSahddow = false;
+            this.bunifuCards4.Location = new System.Drawing.Point(560, 376);
+            this.bunifuCards4.Name = "bunifuCards4";
+            this.bunifuCards4.RightSahddow = true;
+            this.bunifuCards4.ShadowDepth = 20;
+            this.bunifuCards4.Size = new System.Drawing.Size(539, 309);
+            this.bunifuCards4.TabIndex = 8;
+            // 
+            // categoryCard4
+            // 
+            this.categoryCard4.CategoryId = 0;
+            this.bunifuTransition1.SetDecoration(this.categoryCard4, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.categoryCard4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryCard4.Location = new System.Drawing.Point(0, 0);
+            this.categoryCard4.Name = "categoryCard4";
+            this.categoryCard4.Size = new System.Drawing.Size(539, 309);
+            this.categoryCard4.TabIndex = 2;
+            this.categoryCard4.Load += new System.EventHandler(this.CategoryCart_Click);
+            this.categoryCard4.Click += new System.EventHandler(this.CategoryCart_Click);
+            // 
             // bunifuTransition1
             // 
             this.bunifuTransition1.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.VertSlide;
             this.bunifuTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // CategoriesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 819);
+            this.ClientSize = new System.Drawing.Size(1345, 696);
             this.Controls.Add(this.tableLayoutPanel1);
             this.bunifuTransition1.SetDecoration(this, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -424,19 +500,28 @@
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.CategoriesFrm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.bunifuCards1.ResumeLayout(false);
+            this.bunifuCards2.ResumeLayout(false);
+            this.bunifuCards3.ResumeLayout(false);
+            this.bunifuCards4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Controlls.CategoryCard categoryCard1;
-        private Controlls.CategoryCard categoryCard2;
-        private Controlls.CategoryCard categoryCard3;
-        private Controlls.CategoryCard categoryCard4;
+
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 BtnPreviosPage;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 BtnNextPage;
         private Bunifu.UI.WinForms.BunifuTransition bunifuTransition1;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards2;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards4;
+        private Controlls.CategoryCard categoryCard1;
+        private Controlls.CategoryCard categoryCard2;
+        private Controlls.CategoryCard categoryCard3;
+        private Controlls.CategoryCard categoryCard4;
     }
 }

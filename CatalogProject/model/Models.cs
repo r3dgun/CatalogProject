@@ -63,6 +63,8 @@ namespace Models
         public decimal? Price { get; set; }
         public string Image { get; set; }
         public string SecondImage { get; set; }
+        public string ThirdImage { get; set; }
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 
@@ -101,6 +103,34 @@ namespace Models
     {
         public string Message { get; set; }
         public bool IsSuccess { get; set; }
+    }
+    public class ThemeColors
+    {
+        public string GradientTopLeft { get; set; }
+        public string GradientTopRight { get; set; }
+        public string GradientBottomLeft { get; set; }
+        public string GradientBottomRight { get; set; }
+
+        // رنگ دکمه در سه حالت
+        public string ButtonIdleColor { get; set; }
+        public string ButtonHoverColor { get; set; }
+        public string ButtonPressedColor { get; set; }
+
+        public string CardBGColor { get; set; }
+        public string BGColor { get; set; }
+        public string BGImageName { get; set; }
+
+    }
+    public class ThemeFont
+    {
+        public string FontFamily { get; set; }
+        public float Size { get; set; }
+        public FontStyle Style { get; set; }
+
+        public Font ToFont()
+        {
+            return new Font(FontFamily, Size, Style);
+        }
     }
 }
 

@@ -1,41 +1,46 @@
-﻿using CatalogProject.Servise.helper;
-using Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 using Bunifu.UI.WinForms;
-using System.Reflection;
+using CatalogProject.Servise.helper;
+using Models;
+using BunifuGradientPanel = Bunifu.UI.WinForms.BunifuGradientPanel;
 
 namespace CatalogProject.Controlls
 {
-    public partial class ProductCard : UserControl
+    public partial class CompanyCard : UserControl
     {
-        public int  ProductId { get; set; }
-        public ProductCard()
+        private readonly Company _company;
+        public int CompanyID;
+
+        public CompanyCard()
         {
             InitializeComponent();
             OptimizeFormRendering();
-            // Make sure child controls also trigger the click event
-            if (this.GradientPanel != null)
-            {
-                Pic_Box.Click += (s, e) => this.OnClick(e);
 
-            }
+            // Make sure child controls also trigger the click event
+
+            Pic_Box.Click += (s, e) => this.OnClick(e);
+
 
         }
         private void OptimizeFormRendering()
         {
             // Set form-level double buffering
             this.DoubleBuffered = true;
+
             // Apply double buffering to all controls
             EnableDoubleBufferingForAllControls(this);
-           
+
         }
 
         private void EnableDoubleBufferingForAllControls(Control container)
@@ -58,23 +63,19 @@ namespace CatalogProject.Controlls
                 }
             }
         }
-        public void HideGradiantPanel()
+    
+ 
+        public void SetCartDetail(Company company)
         {
-            GradientPanel.Hide();
-        }
-        public BunifuGradientPanel GetBunifuGradientPanel()
-        {
-            return this.GradientPanel;
-        }
-        public void SetCartDetail(Product product)
-        {
-            ProductId =product.Id;
-            lbl_ProductName.Text = "نام محصول :" + @"  " + product.Name;
-            lbl_ProductMainText.Text = "توضیحلت اصلی :" + @"  " + product.MainText;
-            lbl_ProductPrice.Text = "قیمت :" + @"  " + product.Price;
-            lbl_ProductDesc.Text = "معرفی :" + @"  " + product.Description;
-            Pic_Box.Image = Helper.LoadImageFromPath(product.Image, Helper.PathName.ProductImage);
+            CompanyID = company.Id;
+            lbl_CompanyName.Text = "نام شرکت :" + @"  " + company.Name;
+            lbl_CompanyPhone.Text = "تلفن :" + @"  " + company.Phone;
+            lbl_CompanyAddress.Text = "آدرس :" + @"  " + company.Address;
+            lbl_CompanyEmail.Text = "ایمیل :" + @"  " + company.Email;
+            lbl_CompanyDesc.Text = "معرفی :" + @"  " + company.Description;
+            Pic_Box.Image = Helper.LoadImageFromPath(company.Logo, Helper.PathName.CompanyImage);
         }
       
     }
+
 }

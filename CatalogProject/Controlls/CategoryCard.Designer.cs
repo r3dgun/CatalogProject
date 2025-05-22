@@ -29,33 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryCard));
-            this.bunifuCard = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuGradientPanel = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_CategoryName = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl_CategoryDisc = new Bunifu.UI.WinForms.BunifuLabel();
             this.Pic_Box = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.bunifuCard.SuspendLayout();
             this.bunifuGradientPanel.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Box)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuCard
-            // 
-            this.bunifuCard.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCard.BorderRadius = 5;
-            this.bunifuCard.BottomSahddow = true;
-            this.bunifuCard.color = System.Drawing.Color.Tomato;
-            this.bunifuCard.Controls.Add(this.bunifuGradientPanel);
-            this.bunifuCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCard.LeftSahddow = false;
-            this.bunifuCard.Location = new System.Drawing.Point(0, 0);
-            this.bunifuCard.Name = "bunifuCard";
-            this.bunifuCard.RightSahddow = true;
-            this.bunifuCard.ShadowDepth = 20;
-            this.bunifuCard.Size = new System.Drawing.Size(667, 496);
-            this.bunifuCard.TabIndex = 0;
             // 
             // bunifuGradientPanel
             // 
@@ -72,8 +54,8 @@
             this.bunifuGradientPanel.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel.Name = "bunifuGradientPanel";
             this.bunifuGradientPanel.Quality = 10;
-            this.bunifuGradientPanel.Size = new System.Drawing.Size(667, 496);
-            this.bunifuGradientPanel.TabIndex = 1;
+            this.bunifuGradientPanel.Size = new System.Drawing.Size(672, 501);
+            this.bunifuGradientPanel.TabIndex = 2;
             // 
             // tableLayoutPanel
             // 
@@ -96,8 +78,8 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(667, 496);
-            this.tableLayoutPanel.TabIndex = 19;
+            this.tableLayoutPanel.Size = new System.Drawing.Size(672, 501);
+            this.tableLayoutPanel.TabIndex = 21;
             // 
             // lbl_CategoryName
             // 
@@ -105,7 +87,7 @@
             this.lbl_CategoryName.AutoEllipsis = false;
             this.lbl_CategoryName.CursorType = null;
             this.lbl_CategoryName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CategoryName.Location = new System.Drawing.Point(524, 332);
+            this.lbl_CategoryName.Location = new System.Drawing.Point(529, 335);
             this.lbl_CategoryName.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CategoryName.Name = "lbl_CategoryName";
             this.lbl_CategoryName.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -122,7 +104,7 @@
             this.lbl_CategoryDisc.AutoEllipsis = false;
             this.lbl_CategoryDisc.CursorType = null;
             this.lbl_CategoryDisc.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_CategoryDisc.Location = new System.Drawing.Point(520, 413);
+            this.lbl_CategoryDisc.Location = new System.Drawing.Point(525, 417);
             this.lbl_CategoryDisc.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.lbl_CategoryDisc.Name = "lbl_CategoryDisc";
             this.lbl_CategoryDisc.Padding = new System.Windows.Forms.Padding(20, 3, 20, 3);
@@ -141,7 +123,7 @@
             this.Pic_Box.BorderRadius = 100;
             this.Pic_Box.Image = ((System.Drawing.Image)(resources.GetObject("Pic_Box.Image")));
             this.Pic_Box.IsCircle = true;
-            this.Pic_Box.Location = new System.Drawing.Point(233, 65);
+            this.Pic_Box.Location = new System.Drawing.Point(236, 67);
             this.Pic_Box.Name = "Pic_Box";
             this.Pic_Box.Size = new System.Drawing.Size(201, 201);
             this.Pic_Box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -153,10 +135,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuCard);
+            this.Controls.Add(this.bunifuGradientPanel);
             this.Name = "CategoryCard";
-            this.Size = new System.Drawing.Size(667, 496);
-            this.bunifuCard.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(672, 501);
             this.bunifuGradientPanel.ResumeLayout(false);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
@@ -167,7 +148,6 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCards bunifuCard;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private Bunifu.UI.WinForms.BunifuLabel lbl_CategoryName;

@@ -24,6 +24,8 @@ namespace CatalogProject.ProductFroms
         private List<Option> _options;
         private bool _mainImageChange = false;
         private bool _secondImageChange = false;
+        private bool _ThirdImageChange = false;
+
 
         private IProductService _productService;
         private IOptionService _optionService;
@@ -113,6 +115,8 @@ namespace CatalogProject.ProductFroms
                     Helper.PathName.ProductImage);
                 var imageSecondName = Helper.SaveFileToDirectoryAndGetImageName(txtSecondImagePath.Text,
                     Helper.PathName.ProductImage);
+                var imageThirdName = Helper.SaveFileToDirectoryAndGetImageName(txtThirdImagePath.Text,
+                    Helper.PathName.ProductImage);
                 Product product = new Product()
                 {
                     CategoryId = _categoryId,
@@ -122,6 +126,7 @@ namespace CatalogProject.ProductFroms
                     Name = txtProductName.Text,
                     Description = txtDescribtion.Text,
                     Image = imageName,
+                    ThirdImage = imageThirdName
                 };
                 var productId = _productService.InsertProduct(product);
                 var options = GetOptions(productId);
@@ -135,6 +140,13 @@ namespace CatalogProject.ProductFroms
                     var imageName = Helper.SaveFileToDirectoryAndGetImageName(txtProductImagePath.Text,
                         Helper.PathName.ProductImage);
                     _product.Image = imageName;
+
+                }
+                if (_secondImageChange)
+                {
+                    var imageSecondName = Helper.SaveFileToDirectoryAndGetImageName(txtSecondImagePath.Text,
+                        Helper.PathName.ProductImage);
+                    _product.SecondImage = imageSecondName;
 
                 }
                 if (_secondImageChange)
@@ -178,6 +190,22 @@ namespace CatalogProject.ProductFroms
             }
 
             return options;
+        }
+
+ 
+
+        private void btnThirdSaveImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog { Filter = "تصاویر|*.jpg;*.png;*.bmp;*.gif" })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    txtThirdImagePath.Text = ofd.FileName;
+                    PicBoxThird.ImageLocation = ofd.FileName;
+
+                    _ThirdImageChange = true;
+                }
+            }
         }
     }
 }

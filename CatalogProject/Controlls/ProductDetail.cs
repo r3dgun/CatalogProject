@@ -1,32 +1,28 @@
-﻿using CatalogProject.Servise.helper;
-using Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
-using System.Reflection;
+using CatalogProject.Servise.helper;
+using Models;
 
 namespace CatalogProject.Controlls
 {
-    public partial class ProductCard : UserControl
+    public partial class ProductDetail : UserControl
     {
-        public int  ProductId { get; set; }
-        public ProductCard()
+        private readonly BunifuTransition _bunifuTransition;
+        private bool _havePrice = true;
+        public ProductDetail()
         {
             InitializeComponent();
             OptimizeFormRendering();
-            // Make sure child controls also trigger the click event
-            if (this.GradientPanel != null)
-            {
-                Pic_Box.Click += (s, e) => this.OnClick(e);
-
-            }
+            _bunifuTransition = new BunifuTransition();
 
         }
         private void OptimizeFormRendering()
@@ -35,7 +31,7 @@ namespace CatalogProject.Controlls
             this.DoubleBuffered = true;
             // Apply double buffering to all controls
             EnableDoubleBufferingForAllControls(this);
-           
+          
         }
 
         private void EnableDoubleBufferingForAllControls(Control container)
@@ -58,23 +54,39 @@ namespace CatalogProject.Controlls
                 }
             }
         }
-        public void HideGradiantPanel()
+        public async Task InitializeDetailData(Product product)
         {
-            GradientPanel.Hide();
+            lbl_productDesc.Text = product.Description;
+            lbl_productName.Text = product.Name;
+            lbl_productMaintext.Text = product.MainText;
+            if (product.Price != 0)
+            {
+                lbl_productPrice.Text = product.Price?.ToString("N0");
+            }
+            else
+            {
+                lbl_productPrice.Text = "";
+                _havePrice = false;
+            }
         }
-        public BunifuGradientPanel GetBunifuGradientPanel()
+        public async Task ShowDetail()
         {
-            return this.GradientPanel;
+            var lbl = new[]
+            {
+                lbl_productDesc,lbl_productMaintext,lbl_productName,lbl_productPrice
+            }.ToList();
+            var randomAnimation = Helper.GetRandomAnimations();
+            _bunifuTransition.MaxAnimationTime = 2500;
+            if (!_havePrice)
+            {
+                lbl.Remove(lbl_productPrice);
+            }
+            for (int i = 0; i < lbl.Count; i++)
+            {
+                _bunifuTransition.ShowSync(lbl[i], false, randomAnimation[i]);
+            }
+            await Task.Delay(100);
+
         }
-        public void SetCartDetail(Product product)
-        {
-            ProductId =product.Id;
-            lbl_ProductName.Text = "نام محصول :" + @"  " + product.Name;
-            lbl_ProductMainText.Text = "توضیحلت اصلی :" + @"  " + product.MainText;
-            lbl_ProductPrice.Text = "قیمت :" + @"  " + product.Price;
-            lbl_ProductDesc.Text = "معرفی :" + @"  " + product.Description;
-            Pic_Box.Image = Helper.LoadImageFromPath(product.Image, Helper.PathName.ProductImage);
-        }
-      
     }
 }

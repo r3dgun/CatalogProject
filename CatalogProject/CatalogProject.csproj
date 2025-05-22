@@ -216,17 +216,35 @@
     <Compile Include="Controlls\CategoryCard.Designer.cs">
       <DependentUpon>CategoryCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controlls\CompanyCart.cs">
+    <Compile Include="Controlls\CompanyCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controlls\CompanyCart.Designer.cs">
-      <DependentUpon>CompanyCart.cs</DependentUpon>
+    <Compile Include="Controlls\CompanyCard.Designer.cs">
+      <DependentUpon>CompanyCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlls\PicCataloge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlls\PicCataloge.Designer.cs">
+      <DependentUpon>PicCataloge.cs</DependentUpon>
     </Compile>
     <Compile Include="Controlls\ProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controlls\ProductCard.Designer.cs">
       <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlls\ProductDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlls\ProductDetail.Designer.cs">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlls\ProductOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlls\ProductOptions.Designer.cs">
+      <DependentUpon>ProductOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CategoryForm\CategoryListFrm.cs">
       <SubType>Form</SubType>
@@ -325,11 +343,20 @@
     <EmbeddedResource Include="Controlls\CategoryCard.resx">
       <DependentUpon>CategoryCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controlls\CompanyCart.resx">
-      <DependentUpon>CompanyCart.cs</DependentUpon>
+    <EmbeddedResource Include="Controlls\CompanyCard.resx">
+      <DependentUpon>CompanyCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlls\PicCataloge.resx">
+      <DependentUpon>PicCataloge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controlls\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlls\ProductDetail.resx">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlls\ProductOptions.resx">
+      <DependentUpon>ProductOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoryForm\CategoryListFrm.resx">
       <DependentUpon>CategoryListFrm.cs</DependentUpon>
@@ -342,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyForm\CompanyListFrm.resx">
       <DependentUpon>CompanyListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
