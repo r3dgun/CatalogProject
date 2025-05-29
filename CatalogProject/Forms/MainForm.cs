@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BunifuGradientPanelDemo;
 using CatalogProject.Forms.CategoryForm;
 using CatalogProject.Forms.CompanyForm;
 using CatalogProject.Forms.ShowingForms;
 using CatalogProject.ProductFroms;
 using LiteDB;
 using Microsoft.Extensions.DependencyInjection;
+using Models;
 
 namespace CatalogProject
 {
@@ -49,6 +51,35 @@ namespace CatalogProject
             var companiesFrm = Program.ServiceProvider.GetRequiredService<ProductFrm>();
             companiesFrm.ShowDialog();
             
+        }
+
+        private void btnCompanySetting_Click(object sender, EventArgs e)
+        {
+            var pageSettingFrm = Program.ServiceProvider.GetRequiredService<PageSettingFrm>();
+            pageSettingFrm.InitializeData(FormName.Company);
+            pageSettingFrm.ShowDialog();
+
+        }
+
+        private void btnProductsSetting_Click(object sender, EventArgs e)
+        {
+            var pageSettingFrm = Program.ServiceProvider.GetRequiredService<PageSettingFrm>();
+            pageSettingFrm.InitializeData(FormName.Products);
+            pageSettingFrm.ShowDialog();
+        }
+
+        private void btnProductSetting_Click(object sender, EventArgs e)
+        {
+            var pageSettingFrm = Program.ServiceProvider.GetRequiredService<PageSettingFrm>();
+            pageSettingFrm.InitializeData(FormName.Product);
+            pageSettingFrm.ShowDialog();
+        }
+
+        private void btnCategorySetting_Click(object sender, EventArgs e)
+        {
+            var pageSettingFrm = Program.ServiceProvider.GetRequiredService<PageSettingFrm>();
+            pageSettingFrm.InitializeData(FormName.Category);
+            pageSettingFrm.ShowDialog();
         }
     }
 }

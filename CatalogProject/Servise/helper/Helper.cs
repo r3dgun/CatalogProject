@@ -15,7 +15,8 @@ public static class Helper
     {
         CategoryImage,
         CompanyImage,
-        ProductImage
+        ProductImage,
+        BGImage
 
     }
     public static Image LoadImageFromPath(string imageName,PathName pathName)

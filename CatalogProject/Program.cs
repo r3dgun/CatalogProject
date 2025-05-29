@@ -14,6 +14,8 @@ using CatalogProject.Servise.Option;
 using CatalogProject.Forms.CompanyForm;
 using CatalogProject.ProductFroms;
 using CatalogProject.Forms.ShowingForms;
+using CatalogProject.Servise.Font;
+using CatalogProject.Servise.Them;
 
 namespace CatalogProject
 {
@@ -28,7 +30,6 @@ namespace CatalogProject
         {
             var services = new ServiceCollection();
             ConfigureServices(services);
-            ServiceProvider = services.BuildServiceProvider();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var mainForm = ServiceProvider.GetRequiredService<MainForm>();
@@ -43,6 +44,9 @@ namespace CatalogProject
             services.AddSingleton<IProductService, ProductService>();
             services.AddSingleton<IOptionService, OptionService>();
             services.AddSingleton<ICategoryService, CategoryService>();
+            services.AddSingleton<IThemeService, ThemeService>();
+            services.AddSingleton<IFontService, FontService>();
+
 
             // ثبت فرم‌ها
             services.AddTransient<MainForm>();
@@ -56,6 +60,7 @@ namespace CatalogProject
             services.AddTransient<ProductFrm>(); // فرم‌هایی که وابسته به این سرویس هستن
             services.AddTransient<ProductsFrm>(); // فرم‌هایی که وابسته به این سرویس هستن
             services.AddTransient<CompaniesFrm>(); // فرم‌هایی که وابسته به این سرویس هستن
+            services.AddTransient<PageSettingFrm>(); // فرم‌هایی که وابسته به این سرویس هستن
 
             
             Program.ServiceProvider = services.BuildServiceProvider();

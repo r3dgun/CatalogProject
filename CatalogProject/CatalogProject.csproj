@@ -270,11 +270,11 @@
     <Compile Include="Forms\CompanyForm\CompanyListFrm.Designer.cs">
       <DependentUpon>CompanyListFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\PageSettingFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\PageSettingFrm.Designer.cs">
+      <DependentUpon>PageSettingFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ShowingForms\CategoriesFrm.cs">
       <SubType>Form</SubType>
@@ -337,9 +337,11 @@
     <Compile Include="Servise\Category\CategoryService.cs" />
     <Compile Include="Servise\Company\CompanyService.cs" />
     <Compile Include="Servise\Context.cs" />
+    <Compile Include="Servise\Font\FontService.cs" />
     <Compile Include="Servise\helper\Helper.cs" />
     <Compile Include="Servise\Option\OptionService.cs" />
     <Compile Include="Servise\Product\ProductService.cs" />
+    <Compile Include="Servise\Them\ThemeService.cs" />
     <EmbeddedResource Include="Controlls\CategoryCard.resx">
       <DependentUpon>CategoryCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,8 +372,8 @@
     <EmbeddedResource Include="Forms\CompanyForm\CompanyListFrm.resx">
       <DependentUpon>CompanyListFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PageSettingFrm.resx">
+      <DependentUpon>PageSettingFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

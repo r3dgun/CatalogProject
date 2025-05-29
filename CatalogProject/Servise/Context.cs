@@ -19,6 +19,9 @@ public class DatabaseContext : IDisposable
     public ILiteCollection<Models.Category> Categories => _db.GetCollection<Models.Category>("categories");
     public ILiteCollection<Models.Product> Products => _db.GetCollection<Models.Product>("products");
     public ILiteCollection<Models.Option> Options => _db.GetCollection<Models.Option>("options");
+    public ILiteCollection<Models.Theme> Themes => _db.GetCollection<Models.Theme>("Themes");
+    public ILiteCollection<Models.Font> Fonts => _db.GetCollection<Models.Font>("Fonts");
+
 
     public void Dispose()
     {
